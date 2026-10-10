@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free BMI & Body Metrics Calculator | Habit Fix Wellness | Coach Raju Raut</title>
+  
+  <meta name="description" content="Calculate your Body Mass Index (BMI), ideal healthy weight range, daily calorie maintenance (TDEE), and hydration needs. Get personalized habit advice from international wellness coach Raju Raut.">
+  <meta name="keywords" content="BMI Calculator, Body Mass Index Calculator, Ideal Weight Calculator, Daily Calorie Needs, Hydration Target, Coach Raju Raut, Habit Fix Wellness, Weight Management">
+  <link rel="canonical" href="bmi-calculator.html">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Habit Fix Wellness BMI & Health Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "creator": {
+      "@type": "Person",
+      "name": "Raju Raut",
+      "jobTitle": "Wellness Coach"
+    },
+    "description": "Interactive Body Mass Index, BMR, TDEE, and hydration calculator for personalized weight management."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Multilingual Support & Contact) -->
+  <div class="top-notice-bar text-center">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2 mx-auto mx-md-0 mb-1 mb-md-0">
+        <i class="fa-solid fa-earth-americas text-warning"></i>
+        <span>International Wellness Coaching | <strong>English, हिन्दी, বাংলা</strong></span>
+      </div>
+      <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
+        <span class="d-none d-sm-inline"><i class="fa-regular fa-clock me-1"></i> Mon-Sat: 7:00 AM - 9:00 PM IST</span>
+        <a href="https://wa.me/919051231155" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-success me-1"></i> +91 90512 31155</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redesigned Main Header (5 Main Items Visible + Modern Responsive Mobile Drawer) -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-flex align-items-center py-0" href="index.html">
+          <img src="images/logo.svg" alt="Habit Fix Wellness Logo" class="site-header-logo">
+        </a>
+        
+        <!-- Mobile Right Actions: Quick BMI Tool + Animated Hamburger -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <a href="bmi-calculator.html" class="header-mobile-bmi-btn" title="Calculate Your BMI">
+            <i class="fa-solid fa-calculator"></i> BMI Tool
+          </a>
+          <button class="header-hamburger-btn navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavbarNav" aria-controls="siteNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+          </button>
+        </div>
+
+        <!-- Navigation Drawer (Desktop 5-items + Mobile Rich Drawer) -->
+        <div class="collapse navbar-collapse header-nav-collapse" id="siteNavbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 header-nav-list">
+            <!-- Item 1: About Coach -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Coach</a>
+            </li>
+
+            <!-- Item 2: Programs & Services (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Programs &amp; Services
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="programsDropdown">
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="services.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-layer-group text-primary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">All Wellness Services</div>
+                      <div class="header-dropdown-desc">Comprehensive personalized care plans</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="journey.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-flag-checkered text-success"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">21-Day Habit Journey <span class="badge bg-success ms-1 text-white">Flagship</span></div>
+                      <div class="header-dropdown-desc">Structured 3-week routine reset</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="global-coaching.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-globe text-info"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Global Online Coaching</div>
+                      <div class="header-dropdown-desc">USA, UK, UAE, Canada, Australia &amp; India</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="habit-support.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-handshake-angle text-warning"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Ongoing Habit Support</div>
+                      <div class="header-dropdown-desc">Long-term accountability &amp; maintenance</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item 3: BMI Calculator (Featured Free Tool) -->
+            <li class="nav-item">
+              <a class="nav-link nav-link-bmi-featured active" href="bmi-calculator.html">
+                <i class="fa-solid fa-calculator"></i> BMI Calculator <span class="badge-free-tool ms-1">Free Tool</span>
+              </a>
+            </li>
+
+            <!-- Item 4: Transformations -->
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Transformations</a>
+            </li>
+
+            <!-- Item 5: Resources & More (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Resources &amp; More
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="resourcesDropdown">
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="assessment.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-clipboard-check text-success"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Free Wellness Assessment</div>
+                      <div class="header-dropdown-desc">3-Minute personalized lifestyle score</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="trackers.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-file-arrow-down text-primary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Downloadable Trackers</div>
+                      <div class="header-dropdown-desc">Free printable habit &amp; hydration logs</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="knowledge-hub.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-book-open text-warning"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Knowledge Hub Articles</div>
+                      <div class="header-dropdown-desc">Science-based wellness &amp; nutrition guides</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="start-here.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-compass text-secondary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Start Here Guide</div>
+                      <div class="header-dropdown-desc">Step-by-step roadmap for beginners</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="contact.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-headset text-danger"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Contact &amp; Support</div>
+                      <div class="header-dropdown-desc">Direct reach to Coach Raju Raut</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Desktop Right Header Actions -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <div class="dropdown me-1">
+              <button class="btn btn-sm nav-lang-badge dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i> Eng
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('en')">English</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('hi')">हिन्दी (Hindi)</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('bn')">বাংলা (Bengali)</a></li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn btn-primary-wellness btn-sm px-3 shadow-sm">
+              BOOK A CALL
+            </a>
+          </div>
+
+          <!-- Mobile Drawer CTA Bottom Block -->
+          <div class="d-lg-none mobile-drawer-cta-group">
+            <a href="booking.html" class="btn btn-primary-wellness w-100 py-2">
+              <i class="fa-regular fa-calendar-check me-2"></i> Book 1-on-1 Consultation
+            </a>
+            <div class="d-flex gap-2">
+              <a href="assessment.html" class="btn btn-outline-wellness flex-fill btn-sm py-2">
+                <i class="fa-solid fa-clipboard-check me-1"></i> Assessment
+              </a>
+              <a href="https://wa.me/919051231155" target="_blank" rel="noopener" class="btn btn-success flex-fill btn-sm py-2 text-white">
+                <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp
+              </a>
+            </div>
+            <div class="mobile-drawer-lang-pills">
+              <span class="text-muted small">Language:</span>
+              <a href="javascript:void(0)" onclick="setLanguage('en')">English</a>
+              <a href="javascript:void(0)" onclick="setLanguage('hi')">हिन्दी</a>
+              <a href="javascript:void(0)" onclick="setLanguage('bn')">বাংলা</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FIXED FLOATING WHATSAPP & PHONE CALL BUTTONS -->
+  <div class="floating-contact-dock" id="floatingContactDock" aria-label="Quick Contact">
+    <a href="https://wa.me/919051231155?text=Hi%20Coach%20Raju,%20I%20have%20a%20question%20about%20my%20BMI%20and%20health%20metrics." 
+       class="floating-btn whatsapp-btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat with Coach Raju on WhatsApp">
+      <div class="pulse-ring pulse-ring-1"></div>
+      <div class="pulse-ring pulse-ring-2"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="floating-btn-tooltip">WhatsApp: +91 90512 31155</span>
+    </a>
+
+    <a href="tel:9051231155" 
+       class="floating-btn call-btn" 
+       title="Call Coach Raju: 9051231155">
+      <div class="pulse-ring pulse-ring-1"></div>
+      <div class="pulse-ring pulse-ring-2"></div>
+      <i class="fa-solid fa-phone"></i>
+      <span class="floating-btn-tooltip">Call: 9051231155</span>
+    </a>
+  </div>
+
+  <!-- Dedicated Page Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-fade-left">
+          <div class="breadcrumb-nav">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right text-muted" style="font-size: 0.7rem;"></i>
+            <span>Interactive Health Tools</span>
+            <i class="fa-solid fa-chevron-right text-muted" style="font-size: 0.7rem;"></i>
+            <span class="text-dark fw-bold">BMI Calculator</span>
+          </div>
+
+          <span class="badge-subtle mb-3">
+            <i class="fa-solid fa-calculator text-success"></i> Smart Wellness Metrics
+          </span>
+          <h1 class="display-5 fw-bold text-dark mb-3">BMI &amp; Body Metrics Calculator</h1>
+          <p class="section-lead mb-4">
+            Discover your Body Mass Index (BMI), personalized healthy weight range, estimated daily calorie burn (TDEE), and daily water target. No guesswork—get clear, actionable insights supported by Coach Raju Raut's habit guidance.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#calculator-app" class="btn btn-primary-wellness">
+              <i class="fa-solid fa-arrow-down me-1"></i> Calculate Your BMI Now
+            </a>
+            <a href="booking.html" class="btn btn-secondary-wellness">
+              <i class="fa-regular fa-calendar-check me-1"></i> Book Coach Consultation
+            </a>
+          </div>
+
+          <div class="mt-4 pt-2 d-flex flex-wrap gap-4 text-muted small">
+            <div><i class="fa-solid fa-check text-success me-1"></i> Metric &amp; Imperial (US) Units</div>
+            <div><i class="fa-solid fa-check text-success me-1"></i> Asian-Indian Cutoff Guidance</div>
+            <div><i class="fa-solid fa-check text-success me-1"></i> 100% Free &amp; Instant</div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-fade-right">
+          <div class="page-hero-banner-card">
+            <img src="images/bmi-banner.jpg" alt="BMI and Body Metrics Calculator" class="page-hero-banner-img">
+            <div class="page-hero-floating-pill d-flex align-items-center justify-content-between">
+              <div>
+                <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Clinical Standard</small>
+                <div class="fw-bold text-dark">World Health Organization (WHO) &amp; ICMR Metrics</div>
+              </div>
+              <span class="badge bg-success-subtle text-success fw-bold px-3 py-2 rounded-pill">Verified Formula</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator App Section -->
+  <section class="py-5" id="calculator-app" style="background-color: #FAFDF9;">
+    <div class="container py-3">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-subtitle">Real-Time Interactive Tool</span>
+        <h2 class="section-title">Calculate Your Personal Metrics</h2>
+        <p class="section-lead mx-auto">
+          Adjust the sliders or enter your numbers below to see instant BMI calculation, optimal healthy weight range, and tailored habit advice.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        
+        <!-- Calculator Inputs Form -->
+        <div class="col-lg-7">
+          <div class="bmi-calculator-card">
+            
+            <!-- Unit Switcher -->
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+              <h5 class="fw-bold text-dark mb-0">
+                <i class="fa-solid fa-sliders text-success me-2"></i> Your Measurements
+              </h5>
+              <div class="bmi-unit-toggle">
+                <button type="button" class="bmi-unit-btn active" id="unitMetric">Metric (kg / cm)</button>
+                <button type="button" class="bmi-unit-btn" id="unitImperial">Imperial (lbs / ft-in)</button>
+              </div>
+            </div>
+
+            <!-- Gender Toggle -->
+            <div class="mb-4">
+              <label class="form-label fw-bold small text-muted text-uppercase">Gender</label>
+              <div class="d-flex gap-3">
+                <button type="button" class="bmi-gender-btn active" data-gender="male" id="genderMale">
+                  <i class="fa-solid fa-mars text-primary fs-5"></i>
+                  <span>Male</span>
+                </button>
+                <button type="button" class="bmi-gender-btn" data-gender="female" id="genderFemale">
+                  <i class="fa-solid fa-venus text-danger fs-5"></i>
+                  <span>Female</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Age Input -->
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <label for="userAge" class="form-label fw-bold small text-muted text-uppercase">Age (Years)</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-cake-candles text-success"></i></span>
+                  <input type="number" class="form-control border-start-0" id="userAge" min="12" max="100" value="30">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label for="activityLevel" class="form-label fw-bold small text-muted text-uppercase">Daily Activity Level</label>
+                <select class="form-select" id="activityLevel">
+                  <option value="1.2">Sedentary (Desk job, little movement)</option>
+                  <option value="1.375" selected>Lightly Active (Light walks 1-3 days/wk)</option>
+                  <option value="1.55">Moderately Active (Daily walks / workouts)</option>
+                  <option value="1.725">Very Active (Intense routine / manual work)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- METRIC INPUTS SECTION -->
+            <div id="metricInputs">
+              
+              <!-- Height (cm) -->
+              <div class="slider-input-group">
+                <div class="slider-header">
+                  <label for="heightCm" class="form-label fw-bold text-dark mb-0">Height (Centimeters)</label>
+                  <span class="slider-val-badge" id="heightCmBadge">175 cm</span>
+                </div>
+                <div class="d-flex gap-3 align-items-center mb-2">
+                  <input type="range" class="range-slider-wellness" id="heightCmSlider" min="120" max="220" value="175">
+                  <input type="number" class="form-control form-control-sm text-center fw-bold" id="heightCm" min="120" max="220" value="175" style="width: 85px;">
+                </div>
+                <div class="d-flex justify-content-between text-muted" style="font-size: 0.75rem;">
+                  <span>120 cm (3'11")</span>
+                  <span>170 cm (5'7")</span>
+                  <span>220 cm (7'3")</span>
+                </div>
+              </div>
+
+              <!-- Weight (kg) -->
+              <div class="slider-input-group mt-4">
+                <div class="slider-header">
+                  <label for="weightKg" class="form-label fw-bold text-dark mb-0">Weight (Kilograms)</label>
+                  <span class="slider-val-badge" id="weightKgBadge">70 kg</span>
+                </div>
+                <div class="d-flex gap-3 align-items-center mb-2">
+                  <input type="range" class="range-slider-wellness" id="weightKgSlider" min="35" max="180" value="70">
+                  <input type="number" class="form-control form-control-sm text-center fw-bold" id="weightKg" min="35" max="180" value="70" style="width: 85px;">
+                </div>
+                <div class="d-flex justify-content-between text-muted" style="font-size: 0.75rem;">
+                  <span>35 kg</span>
+                  <span>70 kg</span>
+                  <span>180 kg</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- IMPERIAL INPUTS SECTION (Hidden by default) -->
+            <div id="imperialInputs" class="d-none">
+              
+              <!-- Height (ft & in) -->
+              <div class="slider-input-group">
+                <label class="form-label fw-bold text-dark mb-2">Height (Feet &amp; Inches)</label>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <div class="input-group">
+                      <span class="input-group-text bg-light">Ft</span>
+                      <select class="form-select fw-bold" id="heightFt">
+                        <option value="4">4 ft</option>
+                        <option value="5" selected>5 ft</option>
+                        <option value="6">6 ft</option>
+                        <option value="7">7 ft</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group">
+                      <span class="input-group-text bg-light">In</span>
+                      <select class="form-select fw-bold" id="heightIn">
+                        <option value="0">0 in</option>
+                        <option value="1">1 in</option>
+                        <option value="2">2 in</option>
+                        <option value="3">3 in</option>
+                        <option value="4">4 in</option>
+                        <option value="5">5 in</option>
+                        <option value="6">6 in</option>
+                        <option value="7">7 in</option>
+                        <option value="8">8 in</option>
+                        <option value="9" selected>9 in</option>
+                        <option value="10">10 in</option>
+                        <option value="11">11 in</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Weight (lbs) -->
+              <div class="slider-input-group mt-3">
+                <div class="slider-header">
+                  <label for="weightLbs" class="form-label fw-bold text-dark mb-0">Weight (Pounds)</label>
+                  <span class="slider-val-badge" id="weightLbsBadge">154 lbs</span>
+                </div>
+                <div class="d-flex gap-3 align-items-center mb-2">
+                  <input type="range" class="range-slider-wellness" id="weightLbsSlider" min="75" max="400" value="154">
+                  <input type="number" class="form-control form-control-sm text-center fw-bold" id="weightLbs" min="75" max="400" value="154" style="width: 90px;">
+                </div>
+                <div class="d-flex justify-content-between text-muted" style="font-size: 0.75rem;">
+                  <span>75 lbs</span>
+                  <span>150 lbs</span>
+                  <span>400 lbs</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Interactive Visual Spectrum Bar -->
+            <div class="mt-4 pt-2">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="fw-bold small text-muted text-uppercase">BMI Spectrum Range</span>
+                <span class="badge bg-light text-dark border small">Standard Scale (15 - 40)</span>
+              </div>
+              <div class="bmi-spectrum-bar">
+                <div class="bmi-spectrum-marker" id="bmiMarker" style="left: 31%;"></div>
+              </div>
+              <div class="bmi-spectrum-labels">
+                <span>Underweight (&lt;18.5)</span>
+                <span>Normal (18.5-24.9)</span>
+                <span>Overweight (25-29.9)</span>
+                <span>Obesity (30+)</span>
+              </div>
+            </div>
+
+            <div class="alert alert-warning border-0 p-3 rounded-3 small mt-4 d-none" id="asianCutoffNotice"></div>
+
+            <div class="mt-4 pt-2 text-center text-md-start">
+              <small class="text-muted">
+                <i class="fa-solid fa-shield-halved text-success me-1"></i> Calculation happens entirely in your browser. No private personal data is stored without permission.
+              </small>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Calculator Results Card -->
+        <div class="col-lg-5">
+          <div class="bmi-result-card">
+            
+            <span class="badge-subtle mb-2">
+              <i class="fa-solid fa-chart-pie text-success"></i> Your Results
+            </span>
+
+            <div class="text-muted small fw-semibold text-uppercase tracking-wider">Calculated BMI Score</div>
+            <div class="bmi-score-number" id="bmiScore">22.9</div>
+            <div class="bmi-category-badge normal" id="bmiCategoryBadge">
+              <i class="fa-solid fa-heart-pulse me-1"></i> Normal / Healthy Weight
+            </div>
+
+            <div class="text-secondary small mb-4 text-start bg-light p-3 rounded-3" id="bmiCategoryText">
+              <strong>Health Risk Assessment:</strong> Low cardiovascular and metabolic risk. Maintain your daily consistency!
+            </div>
+
+            <!-- Key Metric Breakdown Grid -->
+            <div class="row g-2 mb-4 text-start">
+              <div class="col-6">
+                <div class="bmi-mini-metric">
+                  <div class="label"><i class="fa-solid fa-scale-balanced text-success me-1"></i> Ideal Weight</div>
+                  <div class="val" id="idealWeightVal">56.7 - 76.3 kg</div>
+                  <div class="text-muted" style="font-size: 0.725rem;" id="weightDiffVal">Within healthy range</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bmi-mini-metric">
+                  <div class="label"><i class="fa-solid fa-fire-flame-curved text-warning me-1"></i> Daily Calories</div>
+                  <div class="val" id="calorieTargetVal">2,140 kcal</div>
+                  <div class="text-muted" style="font-size: 0.725rem;">Est. Maintenance (TDEE)</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="bmi-mini-metric">
+                  <div class="label"><i class="fa-solid fa-glass-water text-primary me-1"></i> Daily Water Target</div>
+                  <div class="val" id="waterTargetVal">2.5 - 2.8 L/day</div>
+                  <div class="text-muted" style="font-size: 0.725rem;">Tailored to your current body weight</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coach Advice Box -->
+            <div class="p-3 rounded-3 border-start border-4 border-success bg-white text-start shadow-xs mb-4">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <img src="images/coach-raju-hero.jpg" alt="Coach Raju" class="rounded-circle" style="width: 28px; height: 28px; object-fit: cover;">
+                <strong class="text-dark small">Coach Raju's Recommendation:</strong>
+              </div>
+              <p class="text-secondary small mb-0 fst-italic" id="coachAdviceText">
+                Excellent foundation. Let’s focus on sustaining energy levels, restful sleep, stress resilience, and lifelong lifestyle habits to keep you feeling vibrant.
+              </p>
+            </div>
+
+            <!-- Action Buttons Group -->
+            <div class="d-grid gap-2">
+              <a href="booking.html" class="btn btn-primary-wellness" id="bmiBookBtn">
+                <i class="fa-regular fa-calendar-check me-1"></i> Discuss Results with Coach
+              </a>
+              <a href="https://wa.me/919051231155" target="_blank" rel="noopener" class="btn btn-outline-wellness" id="bmiWhatsAppBtn">
+                <i class="fa-brands fa-whatsapp text-success me-1"></i> Share on WhatsApp
+              </a>
+              <div class="d-flex gap-2">
+                <a href="assessment.html" class="btn btn-light btn-sm flex-fill border text-dark">
+                  <i class="fa-solid fa-list-check me-1"></i> Take Full Assessment
+                </a>
+                <button type="button" class="btn btn-light btn-sm flex-fill border text-dark" id="printBmiReportBtn">
+                  <i class="fa-solid fa-print me-1"></i> Print / Save Report
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Clinical Reference & Classification Standards -->
+  <section class="py-5" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        
+        <div class="col-lg-6">
+          <span class="section-subtitle">Clinical Standards</span>
+          <h2 class="section-title">Understanding BMI Classifications</h2>
+          <p class="text-secondary mb-4">
+            Body Mass Index (BMI) is a screening metric established by the World Health Organization (WHO) and public health organizations worldwide to assess weight-to-height categories across adult populations.
+          </p>
+
+          <!-- WHO & Asian Comparison Table -->
+          <div class="table-responsive rounded-3 border">
+            <table class="table table-hover align-middle mb-0 text-start">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col" class="fw-bold">Classification</th>
+                  <th scope="col" class="fw-bold">Standard WHO</th>
+                  <th scope="col" class="fw-bold">Asian-Indian Standard*</th>
+                  <th scope="col" class="fw-bold">Health Risk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge bg-primary-subtle text-primary">Underweight</span></td>
+                  <td class="fw-semibold">&lt; 18.5</td>
+                  <td class="fw-semibold">&lt; 18.5</td>
+                  <td class="small text-muted">Nutritional Risk</td>
+                </tr>
+                <tr class="table-success bg-opacity-25">
+                  <td><span class="badge bg-success-subtle text-success">Normal / Healthy</span></td>
+                  <td class="fw-bold text-success">18.5 – 24.9</td>
+                  <td class="fw-bold text-success">18.5 – 22.9</td>
+                  <td class="small text-success fw-semibold">Lowest Risk</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-warning-subtle text-dark">Overweight</span></td>
+                  <td class="fw-semibold">25.0 – 29.9</td>
+                  <td class="fw-semibold">23.0 – 24.9</td>
+                  <td class="small text-muted">Moderate Risk</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-danger-subtle text-danger">Obesity Class I</span></td>
+                  <td class="fw-semibold">30.0 – 34.9</td>
+                  <td class="fw-semibold">25.0 – 29.9</td>
+                  <td class="small text-danger">Elevated Risk</td>
+                </tr>
+                <tr>
+                  <td><span class="badge bg-danger text-white">Obesity Class II/III</span></td>
+                  <td class="fw-semibold">&ge; 35.0</td>
+                  <td class="fw-semibold">&ge; 30.0</td>
+                  <td class="small text-danger fw-bold">High Risk</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <small class="text-muted d-block mt-2">
+            *Indian Council of Medical Research (ICMR) &amp; WHO Asian guidelines adjust cutoffs due to higher predisposition to visceral adiposity and insulin resistance at lower BMI levels.
+          </small>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 p-md-5 rounded-4 border bg-surface">
+            <h4 class="fw-bold text-dark mb-3">
+              <i class="fa-solid fa-lightbulb text-warning me-2"></i> Why BMI Is A Starting Point, Not The Entire Story
+            </h4>
+            <p class="text-secondary small mb-3">
+              At Habit Fix Wellness, Coach Raju Raut always reminds clients that a single number on a scale or calculator never defines your overall health vitality:
+            </p>
+            <ul class="list-unstyled text-secondary small mb-4">
+              <li class="d-flex align-items-start gap-2 mb-3">
+                <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                <div>
+                  <strong>Muscle vs. Fat Composition:</strong> BMI cannot differentiate between muscle mass, water retention, and adipose tissue. An athlete may register as "overweight" while carrying optimal lean muscle.
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-2 mb-3">
+                <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                <div>
+                  <strong>Visceral vs. Subcutaneous Fat:</strong> Where your body stores fat matters more than total weight. Fat around vital organs poses higher metabolic risks than subcutaneous fat.
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-2 mb-3">
+                <i class="fa-solid fa-circle-check text-success mt-1"></i>
+                <div>
+                  <strong>Metabolic Markers &amp; Daily Stamina:</strong> Blood pressure, resting heart rate, sleep quality, and daily energy are often far more indicative of true well-being than BMI alone.
+                </div>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-3">
+              <a href="assessment.html" class="btn btn-primary-wellness btn-sm">
+                Take 3-Min Lifestyle Audit
+              </a>
+              <a href="journey.html" class="btn btn-outline-wellness btn-sm">
+                21-Day Habit Journey
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BMI Frequently Asked Questions Accordion -->
+  <section class="py-5" style="background-color: #F8FAF6;">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-subtitle">Common Questions</span>
+        <h2 class="section-title">Frequently Asked Questions About BMI</h2>
+        <p class="section-lead mx-auto">
+          Clear, honest answers to help you interpret your numbers without anxiety or confusion.
+        </p>
+      </div>
+
+      <div class="accordion max-w-700 mx-auto" id="bmiFaqAccordion" style="max-width: 820px;">
+        
+        <div class="accordion-item border mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="bmiFaq1">
+            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBmi1" aria-expanded="true" aria-controls="collapseBmi1">
+              What does my BMI result actually mean for daily life?
+            </button>
+          </h2>
+          <div id="collapseBmi1" class="accordion-collapse collapse show" aria-labelledby="bmiFaq1" data-bs-parent="#bmiFaqAccordion">
+            <div class="accordion-body text-secondary">
+              Your BMI is simply a general baseline showing how your weight correlates with your height. If your score falls into overweight or obese categories, it suggests that taking gentle, sustainable steps toward mindful nutrition, daily hydration, and light activity could significantly protect your metabolic well-being over time.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="bmiFaq2">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBmi2" aria-expanded="false" aria-controls="collapseBmi2">
+              Why do Asian populations have different BMI thresholds?
+            </button>
+          </h2>
+          <div id="collapseBmi2" class="accordion-collapse collapse" aria-labelledby="bmiFaq2" data-bs-parent="#bmiFaqAccordion">
+            <div class="accordion-body text-secondary">
+              Extensive research led by the WHO and ICMR found that people of South Asian heritage tend to carry higher percentages of body fat and abdominal fat at lower body weights compared to Western populations. Consequently, the threshold for overweight in India and South Asia begins at 23.0 rather than 25.0.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="bmiFaq3">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBmi3" aria-expanded="false" aria-controls="collapseBmi3">
+              Can I lower my BMI without extreme crash dieting?
+            </button>
+          </h2>
+          <div id="collapseBmi3" class="accordion-collapse collapse" aria-labelledby="bmiFaq3" data-bs-parent="#bmiFaqAccordion">
+            <div class="accordion-body text-secondary">
+              Absolutely! In fact, crash diets almost always trigger rebound weight gain and muscle loss. In Coach Raju's <strong>21-Day Habit Journey</strong>, clients focus on one tiny habit at a time—adequate water, protein consciousness, mindful chewing, and evening routine fixes. This produces steady, sustainable results that stick for life.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="bmiFaq4">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBmi4" aria-expanded="false" aria-controls="collapseBmi4">
+              How often should I calculate and check my BMI?
+            </button>
+          </h2>
+          <div id="collapseBmi4" class="accordion-collapse collapse" aria-labelledby="bmiFaq4" data-bs-parent="#bmiFaqAccordion">
+            <div class="accordion-body text-secondary">
+              We recommend calculating your BMI once every 3 to 4 weeks. Daily scale fluctuations are driven primarily by water balance, sodium intake, and glycogen storage, not fat gain or loss. Focus on daily habit streaks rather than daily scale numbers.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coach Consultation CTA Banner -->
+  <section class="py-5" style="background: linear-gradient(135deg, #182A11 0%, #294E1B 100%); color: #FFFFFF;">
+    <div class="container py-4 text-center">
+      <span class="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill mb-3">1-on-1 Guidance</span>
+      <h2 class="display-6 fw-bold text-white mb-3">Want To Turn Your Numbers Into A Realistic Action Plan?</h2>
+      <p class="lead text-light max-w-700 mx-auto mb-4" style="max-width: 680px;">
+        Connect directly with Coach Raju Raut. We will review your daily routine, food preferences, and biological rhythms to build a customized habit roadmap without restrictive diets.
+      </p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="booking.html" class="btn btn-primary-wellness btn-lg">
+          <i class="fa-regular fa-calendar-check me-2"></i> Book Free Consultation Call
+        </a>
+        <a href="https://wa.me/919051231155" target="_blank" rel="noopener" class="btn btn-secondary-wellness btn-lg">
+          <i class="fa-brands fa-whatsapp text-success me-2"></i> WhatsApp: 90512 31155
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Brand & Coach Bio -->
+        <div class="col-lg-4 col-md-6">
+          <img src="images/logo.svg" alt="Habit Fix Wellness Logo" class="mb-3" style="height: 48px; filter: brightness(0) invert(1);">
+          <p class="text-secondary small mb-3">
+            Habit Fix Wellness by Raju Raut. International wellness coach offering simple, practical, and sustainable guidance for healthy weight management, nutrition awareness, hydration, movement, and habit building.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://wa.me/919051231155" target="_blank" rel="noopener" class="footer-social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:9051231155" class="footer-social-btn" title="Phone Call"><i class="fa-solid fa-phone"></i></a>
+            <a href="contact.html" class="footer-social-btn" title="Support"><i class="fa-solid fa-headset"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Programs</h5>
+          <ul class="footer-links small">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="journey.html">21-Day Habit Journey</a></li>
+            <li><a href="global-coaching.html">Global Online Coaching</a></li>
+            <li><a href="habit-support.html">Ongoing Habit Support</a></li>
+            <li><a href="gallery.html">Transformations</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources & Tools -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Resources &amp; Tools</h5>
+          <ul class="footer-links small">
+            <li><a href="bmi-calculator.html" class="text-white fw-bold"><i class="fa-solid fa-calculator text-success me-1"></i> BMI Calculator</a></li>
+            <li><a href="trackers.html">Download Trackers</a></li>
+            <li><a href="knowledge-hub.html">Knowledge Hub</a></li>
+            <li><a href="start-here.html">Start Here Guide</a></li>
+            <li><a href="assessment.html">Free Assessment</a></li>
+            <li><a href="booking.html">Book Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Direct Contact</h5>
+          <div class="text-secondary small mb-3">
+            <div class="mb-2">
+              <i class="fa-solid fa-phone text-success me-2"></i>
+              <strong>Phone:</strong> <a href="tel:9051231155" class="text-white">9051231155</a>
+            </div>
+            <div class="mb-2">
+              <i class="fa-brands fa-whatsapp text-success me-2"></i>
+              <strong>WhatsApp:</strong> <a href="https://wa.me/919051231155" target="_blank" class="text-white">+91 90512 31155</a>
+            </div>
+            <div class="mb-2">
+              <i class="fa-regular fa-envelope text-success me-2"></i>
+              <strong>Email:</strong> <a href="mailto:coach@habitfixwellness.com" class="text-white">coach@habitfixwellness.com</a>
+            </div>
+            <div class="mb-2">
+              <i class="fa-solid fa-globe text-success me-2"></i>
+              <strong>Availability:</strong> Global (English, हिन्दी, বাংলা)
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Disclaimer -->
+      <div class="footer-disclaimer-box">
+        <strong>Important Wellness Disclaimer:</strong> Habit Fix Wellness and Coach Raju Raut provide general wellness education, lifestyle guidance, and healthy habit coaching. Information provided on this website and calculated by the BMI tool is not intended to diagnose, treat, cure, or prevent any disease. Wellness coaching does not replace medical consultation with a licensed healthcare professional. Always consult a physician before beginning any diet or exercise program.
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+        <div>&copy; 2026 Habit Fix Wellness. All Rights Reserved. Coach Raju Raut.</div>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <a href="privacy.html" class="text-secondary small">Privacy Policy</a>
+          <span class="text-secondary">•</span>
+          <a href="terms.html" class="text-secondary small">Terms &amp; Conditions</a>
+          <span class="text-secondary">•</span>
+          <a href="disclaimer.html" class="text-secondary small">Medical Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/bmi-calculator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* ==========================================================================
+   HABIT FIX WELLNESS - Animations & Micro-Interactions
+   Scroll reveals, wave pulse for floating buttons, smooth hover transitions
+   ========================================================================== */
+
+/* Double Wave Pulse for Floating WhatsApp Button */
+@keyframes pulse-wave-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8),
+                0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0),
+                0 0 0 36px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0),
+                0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Double Wave Pulse for Floating Direct Call Button */
+@keyframes pulse-wave-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 157, 19, 0.8),
+                0 0 0 0 rgba(79, 157, 19, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(79, 157, 19, 0),
+                0 0 0 36px rgba(79, 157, 19, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 157, 19, 0),
+                0 0 0 0 rgba(79, 157, 19, 0);
+  }
+}
+
+.floating-btn.whatsapp-btn {
+  animation: pulse-wave-whatsapp 2.5s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.floating-btn.call-btn {
+  animation: pulse-wave-green 2.5s infinite cubic-bezier(0.25, 1, 0.5, 1) 0.8s;
+}
+
+/* Scroll Reveal Classes (Driven by IntersectionObserver in main.js) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-zoom-in {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom-in.is-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Delay Utilities */
+.delay-100 { transition-delay: 0.1s !important; }
+.delay-200 { transition-delay: 0.2s !important; }
+.delay-300 { transition-delay: 0.3s !important; }
+.delay-400 { transition-delay: 0.4s !important; }
+.delay-500 { transition-delay: 0.5s !important; }
+
+/* Subtle Floating Animation */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: gentle-float 4.5s ease-in-out infinite;
+}
+
+/* Image Shimmer on Card Hover */
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.img-hover-zoom img {
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}

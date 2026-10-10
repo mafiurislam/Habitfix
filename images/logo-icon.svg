@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="18" fill="#4F9D13"/>
+  <!-- Habit loop ring -->
+  <circle cx="32" cy="32" r="21" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="3" stroke-dasharray="100 25" stroke-linecap="round"/>
+  <!-- Leaf -->
+  <path d="M32 16C32 16 45 20 44 34C43 40 37 43 32 47C27 43 21 40 20 34C19 20 32 16 32 16Z" fill="#FFFFFF"/>
+  <path d="M32 25V41" stroke="#4F9D13" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M32 31C35 29 38 29 38 29" stroke="#4F9D13" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="47" r="3" fill="#FFFFFF"/>
+</svg>

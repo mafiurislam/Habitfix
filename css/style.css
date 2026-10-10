@@ -1,0 +1,1624 @@
+/* ==========================================================================
+   HABIT FIX WELLNESS - Master Stylesheet (Modern, Colorful & Premium)
+   Brand Primary: #4F9D13 | Secondary: #2E7D32 | Accents: Warm Gold & Mint
+   ========================================================================== */
+
+:root {
+  /* Brand Green Shades */
+  --primary: #4F9D13;
+  --primary-rgb: 79, 157, 19;
+  --primary-light: #F0F9EB;
+  --primary-tint: #E2F4D6;
+  --primary-border: #BCE4A6;
+  --primary-dark: #3B780E;
+  --primary-darker: #254F09;
+  
+  /* Vibrant Supporting Colors */
+  --accent-lime: #65A30D;
+  --accent-gold: #D97706;
+  --accent-gold-light: #FEF3C7;
+  --accent-teal: #0D9488;
+  --accent-teal-light: #CCFBF1;
+  --accent-blue: #2563EB;
+  --accent-blue-light: #EFF6FF;
+  --accent-purple: #7C3AED;
+  --accent-purple-light: #F3E8FF;
+
+  /* Surfaces & Backgrounds */
+  --bg-white: #FFFFFF;
+  --bg-light: #F8FAF6;
+  --bg-surface: #F3F7F0;
+  --bg-card: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(79, 157, 19, 0.16);
+
+  /* Typography */
+  --text-dark: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+
+  /* Fonts */
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 42px rgba(15, 23, 42, 0.11);
+  --shadow-green: 0 10px 26px rgba(79, 157, 19, 0.28);
+  --shadow-green-lg: 0 16px 36px rgba(79, 157, 19, 0.35);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background-color: var(--bg-white);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Top Announcement Bar */
+.top-notice-bar {
+  background: linear-gradient(90deg, #13220E 0%, #1D3615 50%, #13220E 100%);
+  color: #DCF0D6;
+  font-size: 0.825rem;
+  padding: 9px 0;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(79, 157, 19, 0.3);
+}
+
+.top-notice-bar a {
+  color: #A3F56E;
+  font-weight: 600;
+}
+
+.top-notice-bar a:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Modern Frosted Glass Header & Navigation (Strictly 5 Desktop Items)
+   ========================================================================== */
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.09);
+  border-bottom-color: rgba(203, 213, 225, 0.9);
+}
+
+.navbar {
+  padding: 10px 0;
+  transition: padding var(--transition-fast);
+}
+
+/* Site Logo - Crisp and Proportionate */
+.site-header-logo {
+  height: 48px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-bounce);
+}
+
+.navbar-brand:hover .site-header-logo {
+  transform: scale(1.02);
+}
+
+/* 5 Main Nav Items List */
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-nav-list .nav-link {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1E293B !important;
+  padding: 9px 14px !important;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.header-nav-list .nav-link:hover,
+.header-nav-list .nav-link.active {
+  color: var(--primary-dark) !important;
+  background-color: var(--primary-light);
+}
+
+/* Dropdown Caret Styling */
+.header-nav-list .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.35em;
+  vertical-align: 0.15em;
+  content: "";
+  border-top: 0.35em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  transition: transform 0.25s ease;
+}
+
+.header-nav-list .dropdown.show .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Featured BMI Calculator Nav Link */
+.nav-link-bmi-featured {
+  position: relative;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+}
+
+.nav-link-bmi-featured i {
+  color: #DC2626;
+  font-size: 0.95rem;
+}
+
+.badge-free-tool {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFFFFF;
+  padding: 2px 7px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(16, 185, 129, 0.35);
+  animation: pulseTool 2.5s infinite;
+}
+
+@keyframes pulseTool {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.88; transform: scale(1.05); }
+}
+
+/* Desktop Dropdowns Menu Box */
+@media (min-width: 992px) {
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar-nav .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s ease-out;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    border-radius: 14px;
+    padding: 10px;
+    min-width: 300px;
+    margin-top: 4px;
+    background: #FFFFFF;
+  }
+}
+
+/* Rich Header Dropdown Items */
+.header-dropdown-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+  background: transparent;
+  white-space: normal;
+}
+
+.header-dropdown-item:hover,
+.header-dropdown-item.active {
+  background-color: var(--primary-light) !important;
+  color: var(--primary-dark) !important;
+  transform: translateX(4px);
+}
+
+.header-dropdown-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  background: #F1F5F9;
+  color: #334155;
+  transition: all var(--transition-fast);
+}
+
+.header-dropdown-item:hover .header-dropdown-icon,
+.header-dropdown-item.active .header-dropdown-icon {
+  background: #DCF0D6;
+  color: #2F610B;
+}
+
+.header-dropdown-text {
+  flex: 1;
+}
+
+.header-dropdown-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-dropdown-item:hover .header-dropdown-title,
+.header-dropdown-item.active .header-dropdown-title {
+  color: var(--primary-dark);
+}
+
+.header-dropdown-desc {
+  font-size: 0.775rem;
+  color: #64748B;
+  margin-top: 2px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Mobile Quick Access Bar & Controls */
+.header-mobile-bmi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #991B1B;
+  background: #FEE2E2;
+  border: 1px solid #FECACA;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.header-mobile-bmi-btn:hover {
+  background: #FCA5A5;
+  color: #7F1D1D;
+}
+
+/* Custom Animated Hamburger Button */
+.header-hamburger-btn {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--glass-border);
+  background: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  transition: all var(--transition-fast);
+  gap: 5px;
+}
+
+.header-hamburger-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-border);
+}
+
+.header-hamburger-btn .ham-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-hamburger-btn[aria-expanded="true"] .ham-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header-hamburger-btn[aria-expanded="true"] .ham-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.header-hamburger-btn[aria-expanded="true"] .ham-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Language Badge */
+.nav-lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.nav-lang-badge:hover {
+  background: var(--primary-tint);
+  border-color: var(--primary);
+}
+
+/* Mobile Drawer Responsive Layout (< 992px) */
+@media (max-width: 991.98px) {
+  .site-header {
+    padding: 0;
+  }
+  
+  .navbar {
+    padding: 8px 0;
+  }
+  
+  .site-header-logo {
+    height: 38px;
+    max-width: 185px;
+  }
+
+  .header-nav-collapse {
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin-top: 10px;
+    padding: 16px 14px 20px 14px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+    border: 1px solid #E2E8F0;
+    max-height: 84vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header-nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 16px !important;
+  }
+
+  .header-nav-list .nav-item {
+    width: 100%;
+  }
+
+  .header-nav-list .nav-link {
+    font-size: 0.975rem;
+    padding: 11px 16px !important;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #F8FAFC;
+    border: 1px solid #EEF2F6;
+  }
+
+  .header-nav-list .nav-link:hover,
+  .header-nav-list .nav-link.active {
+    background: #F2F9ED;
+    border-color: #DCF0D6;
+    color: var(--primary-dark) !important;
+  }
+
+  .header-nav-collapse .dropdown-menu {
+    display: none;
+    border: none;
+    box-shadow: none;
+    padding: 6px 0 6px 6px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    background: #FAFCF9;
+    border-radius: 10px;
+    border-left: 3px solid var(--primary);
+  }
+
+  .header-nav-collapse .dropdown-menu.show {
+    display: block;
+    animation: none;
+  }
+
+  .header-dropdown-item {
+    padding: 8px 10px;
+    margin-bottom: 4px;
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 8px;
+  }
+
+  .mobile-drawer-cta-group {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-drawer-cta-group .btn {
+    font-weight: 700;
+  }
+
+  .mobile-drawer-lang-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 6px;
+  }
+
+  .mobile-drawer-lang-pills a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #F1F5F9;
+  }
+}
+
+/* Primary Brand Buttons */
+.btn-primary-wellness {
+  background: linear-gradient(135deg, #4F9D13 0%, #3B780E 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  box-shadow: var(--shadow-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary-wellness::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.btn-primary-wellness:hover::before {
+  left: 100%;
+}
+
+.btn-primary-wellness:hover {
+  background: linear-gradient(135deg, #5CB418 0%, #448911 100%);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-green-lg);
+}
+
+.btn-secondary-wellness {
+  background-color: #FFFFFF;
+  color: var(--text-dark) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--primary-border);
+  box-shadow: var(--shadow-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-smooth);
+}
+
+.btn-secondary-wellness:hover {
+  border-color: var(--primary);
+  color: var(--primary-dark) !important;
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-wellness {
+  background-color: transparent;
+  color: var(--primary-dark) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.925rem;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-wellness:hover {
+  background-color: var(--primary);
+  color: #FFFFFF !important;
+  box-shadow: var(--shadow-green);
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge-subtle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-border);
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.03em;
+}
+
+/* Section Header Typography */
+.section-subtitle {
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+  background: var(--primary-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary-border);
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1.1rem;
+}
+
+.section-lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   FIXED FLOATING WHATSAPP & DIRECT CALL DOCK
+   Number: 9051231155
+   Continuous Pulse Wave Animation
+   ========================================================================== */
+.floating-contact-dock {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  z-index: 9999;
+}
+
+.floating-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  transition: transform var(--transition-bounce);
+}
+
+.floating-btn:hover {
+  transform: scale(1.12);
+}
+
+.floating-btn i {
+  font-size: 1.7rem;
+  position: relative;
+  z-index: 4;
+}
+
+.floating-btn.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.floating-btn.call-btn {
+  background: linear-gradient(135deg, #4F9D13 0%, #306509 100%);
+}
+
+.floating-btn-tooltip {
+  position: absolute;
+  right: 74px;
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.95);
+  color: #FFFFFF;
+  padding: 7px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all var(--transition-smooth);
+  pointer-events: none;
+}
+
+.floating-btn:hover .floating-btn-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding: 70px 0 90px;
+  background: radial-gradient(circle at 85% 15%, #EAF6E3 0%, #F8FAF6 45%, #FFFFFF 85%);
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 1.35rem;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #4F9D13 0%, #295509 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-lead {
+  font-size: 1.2rem;
+  color: var(--text-body);
+  line-height: 1.68;
+  margin-bottom: 1.8rem;
+}
+
+.coach-quote-box {
+  background: linear-gradient(135deg, #F0F9EB 0%, #E6F5DE 100%);
+  border-left: 5px solid var(--primary);
+  padding: 20px 24px;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin-bottom: 2.2rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.hero-portrait-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--primary-border);
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-portrait-card:hover {
+  transform: translateY(-4px);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.hero-portrait-card:hover .hero-portrait-img {
+  transform: scale(1.02);
+}
+
+.hero-badge-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(79, 157, 19, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-floating-stat {
+  position: absolute;
+  top: 28px;
+  right: -18px;
+  background: #FFFFFF;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--primary-border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   HOMEPAGE EXPLORATION HUB (Links directly to dropdown pages)
+   ========================================================================== */
+.hub-card {
+  background: #FFFFFF;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.hub-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), #84CC16);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.hub-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.hub-card:hover::after {
+  opacity: 1;
+}
+
+.hub-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  transition: transform var(--transition-bounce);
+}
+
+.hub-card:hover .hub-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ==========================================================================
+   BODY & WELLNESS EDUCATION MATRIX INTERACTIVE TABS
+   ========================================================================== */
+.matrix-tab-btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: #FFFFFF;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.matrix-tab-btn:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: var(--primary-border);
+}
+
+.matrix-tab-btn.active {
+  background: var(--primary);
+  color: #FFFFFF !important;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-green);
+}
+
+/* Card Transitions */
+.transformation-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(79, 157, 19, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.transformation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.transformation-img-container {
+  position: relative;
+  overflow: hidden;
+  background: #EAF0E8;
+  cursor: pointer;
+}
+
+.transformation-img-container img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.transformation-card:hover .transformation-img-container img {
+  transform: scale(1.04);
+}
+
+.habit-tag {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--primary-border);
+}
+
+/* Footer Styling */
+.site-footer {
+  background: #0E1A0C;
+  color: #A4C49E;
+  padding: 85px 0 35px;
+  border-top: 1px solid rgba(79, 157, 19, 0.25);
+}
+
+.site-footer h5 {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 11px;
+}
+
+.footer-links a {
+  color: #A4C49E;
+  transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+  padding-left: 5px;
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.footer-social-btn:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-green);
+}
+
+.footer-disclaimer-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-top: 45px;
+  font-size: 0.825rem;
+  line-height: 1.65;
+  color: #8CA687;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  padding-top: 25px;
+  margin-top: 50px;
+  font-size: 0.825rem;
+  color: #799475;
+}
+
+/* ==========================================================================
+   REDESIGNED PROFESSIONAL & MODERN HEADER (5 MAIN ITEMS + STREAMLINED MOBILE)
+   ========================================================================== */
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  border-bottom: 1px solid rgba(79, 157, 19, 0.15);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(79, 157, 19, 0.24);
+}
+
+.site-header .navbar {
+  padding: 10px 0;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  transition: transform var(--transition-bounce);
+}
+
+.navbar-brand:hover .site-logo {
+  transform: scale(1.02);
+}
+
+@media (max-width: 575.98px) {
+  .site-logo {
+    height: 40px;
+    max-width: 185px;
+  }
+}
+
+/* Nav Items & Links */
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-nav-list .nav-link {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1E293B !important;
+  padding: 9px 15px !important;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.header-nav-list .nav-link:hover,
+.header-nav-list .nav-link:focus {
+  color: var(--primary-dark) !important;
+  background-color: var(--primary-light);
+}
+
+.header-nav-list .nav-link.active {
+  color: var(--primary-dark) !important;
+  background-color: var(--primary-light);
+  font-weight: 700;
+}
+
+/* Specific highlight for BMI Calculator Nav Item */
+.header-nav-list .nav-link-bmi-featured {
+  background: linear-gradient(135deg, #F0F9EB 0%, #E2F4D6 100%) !important;
+  color: var(--primary-dark) !important;
+  border: 1px solid var(--primary-border);
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(79, 157, 19, 0.12);
+}
+
+.header-nav-list .nav-link-bmi-featured:hover,
+.header-nav-list .nav-link-bmi-featured.active {
+  background: var(--primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(79, 157, 19, 0.32);
+}
+
+.header-nav-list .nav-link-bmi-featured:hover .bmi-badge-tool,
+.header-nav-list .nav-link-bmi-featured.active .bmi-badge-tool {
+  background: #FFFFFF;
+  color: var(--primary-dark);
+}
+
+.bmi-badge-tool {
+  font-size: 0.65rem;
+  background: #E11D48;
+  color: #FFFFFF;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+/* Dropdown Menu Styles (Desktop) */
+.header-dropdown-menu {
+  border: 1px solid rgba(79, 157, 19, 0.18);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  border-radius: 18px;
+  padding: 10px;
+  background: #FFFFFF;
+  min-width: 290px;
+  margin-top: 10px;
+  animation: headerDropdownSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes headerDropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-dropdown-menu .dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  white-space: normal;
+}
+
+.header-dropdown-menu .dropdown-item i {
+  color: var(--primary);
+  font-size: 1.15rem;
+  width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.header-dropdown-menu .dropdown-item:hover,
+.header-dropdown-menu .dropdown-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  transform: translateX(4px);
+}
+
+.header-dropdown-menu .dropdown-item .badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 7px;
+}
+
+/* Header Hamburger Toggle (Modern) */
+.header-hamburger-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1.5px solid var(--primary-border);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.header-hamburger-btn:hover,
+.header-hamburger-btn:focus {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(79, 157, 19, 0.2);
+}
+
+.header-hamburger-btn i {
+  font-size: 1.25rem;
+}
+
+/* Mobile Quick BMI Button in header bar */
+.header-mobile-bmi-btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 7px 13px;
+  border-radius: var(--radius-pill);
+  background: var(--primary-light);
+  color: var(--primary-dark) !important;
+  border: 1px solid var(--primary-border);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.2s ease;
+}
+
+.header-mobile-bmi-btn:hover {
+  background: var(--primary);
+  color: #FFFFFF !important;
+  border-color: var(--primary);
+}
+
+/* Mobile Collapse Drawer Styling */
+@media (max-width: 991.98px) {
+  .header-nav-collapse {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: 20px;
+    padding: 18px;
+    margin-top: 14px;
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.16);
+    border: 1px solid rgba(79, 157, 19, 0.22);
+  }
+
+  .header-nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .header-nav-list .nav-link {
+    width: 100%;
+    padding: 12px 16px !important;
+    border-radius: 12px;
+    justify-content: space-between;
+    font-size: 0.975rem;
+  }
+
+  .header-nav-list .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background: #F8FAF6;
+    border-radius: 14px;
+    padding: 8px;
+    margin: 6px 0 10px 0;
+  }
+
+  .header-dropdown-menu .dropdown-item {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-drawer-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(79, 157, 19, 0.15);
+  }
+}
+
+
+/* ==========================================================================
+   DEDICATED PAGE HERO BANNERS
+   ========================================================================== */
+.page-hero {
+  position: relative;
+  padding: 60px 0 75px;
+  background: radial-gradient(circle at 75% 20%, #EBF7E5 0%, #F8FAF6 50%, #FFFFFF 100%);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(79, 157, 19, 0.12);
+}
+
+.page-hero-banner-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: #FFFFFF;
+}
+
+.page-hero-banner-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.page-hero-banner-card:hover .page-hero-banner-img {
+  transform: scale(1.03);
+}
+
+.page-hero-floating-pill {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  padding: 16px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(79, 157, 19, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.breadcrumb-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.breadcrumb-nav a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   STATE-OF-THE-ART BMI CALCULATOR
+   ========================================================================== */
+.bmi-calculator-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.08);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.bmi-unit-toggle {
+  background: #F1F5F9;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  display: inline-flex;
+  gap: 4px;
+}
+
+.bmi-unit-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bmi-unit-btn.active {
+  background: #FFFFFF;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-xs);
+}
+
+.bmi-gender-btn {
+  flex: 1;
+  border: 2px solid #E2E8F0;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.bmi-gender-btn:hover {
+  border-color: var(--primary-border);
+  background: var(--primary-light);
+}
+
+.bmi-gender-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.slider-input-group {
+  margin-bottom: 22px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.slider-val-badge {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-border);
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  min-width: 80px;
+  text-align: center;
+}
+
+.range-slider-wellness {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #E2E8F0;
+  outline: none;
+  accent-color: var(--primary);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* BMI Spectrum Visual Bar */
+.bmi-spectrum-bar {
+  height: 18px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, 
+    #3B82F6 0%, #3B82F6 18.5%, 
+    #10B981 18.5%, #10B981 25%, 
+    #F59E0B 25%, #F59E0B 30%, 
+    #EF4444 30%, #EF4444 35%, 
+    #991B1B 35%, #991B1B 100%
+  );
+  position: relative;
+  margin: 30px 0 24px;
+}
+
+.bmi-spectrum-marker {
+  position: absolute;
+  top: -10px;
+  width: 18px;
+  height: 38px;
+  background: #0F172A;
+  border: 3px solid #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transform: translateX(-50%);
+  transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bmi-spectrum-marker::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #0F172A;
+}
+
+.bmi-spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* BMI Result Card */
+.bmi-result-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F7FAF5 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--primary-border);
+  box-shadow: 0 14px 40px rgba(79, 157, 19, 0.12);
+  padding: 36px 30px;
+  text-align: center;
+  position: sticky;
+  top: 95px;
+}
+
+.bmi-score-number {
+  font-size: 4.2rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  line-height: 1;
+  color: var(--primary-dark);
+  margin: 12px 0 6px;
+}
+
+.bmi-category-badge {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 8px 24px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+}
+
+.bmi-category-badge.underweight { background: #DBEAFE; color: #1E40AF; }
+.bmi-category-badge.normal { background: #D1FAE5; color: #065F46; }
+.bmi-category-badge.overweight { background: #FEF3C7; color: #92400E; }
+.bmi-category-badge.obese1 { background: #FEE2E2; color: #991B1B; }
+.bmi-category-badge.obese2 { background: #FCE7F3; color: #831843; }
+
+.bmi-mini-metric {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: left;
+  height: 100%;
+}
+
+.bmi-mini-metric .label {
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bmi-mini-metric .val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-top: 4px;
+}
+
+/* Printable Trackers Card */
+.tracker-card {
+  background: #FFFFFF;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tracker-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.tracker-card-img-wrap {
+  position: relative;
+  background: #F1F5F9;
+  height: 220px;
+  overflow: hidden;
+}
+
+.tracker-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tracker-card:hover .tracker-card-img {
+  transform: scale(1.05);
+}
+
+/* Print Sheet Styles */
+@media print {
+  .site-header, .top-notice-bar, .site-footer, .floating-contact-dock, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .bmi-calculator-card, .bmi-result-card {
+    box-shadow: none !important;
+    border: 1px solid #CCC !important;
+  }
+}
+

@@ -1,0 +1,130 @@
+/* ==========================================================================
+   HABIT FIX WELLNESS - Responsive Mobile-First Stylesheet
+   ========================================================================== */
+
+/* Mobile Breakpoints (< 768px) */
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.85rem;
+  }
+  
+  .hero-portrait-img {
+    height: 340px;
+  }
+  
+  .hero-floating-stat {
+    position: static;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  .floating-contact-dock {
+    bottom: 18px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-btn i {
+    font-size: 1.4rem;
+  }
+
+  .floating-btn-tooltip {
+    display: none; /* Hide tooltips on small touch screens */
+  }
+
+  .trust-pillars {
+    gap: 12px 18px;
+    font-size: 0.85rem;
+  }
+
+  .matrix-content-box {
+    padding: 20px;
+  }
+
+  .coach-image-wrapper img {
+    height: 360px;
+  }
+
+  .btn-primary-wellness,
+  .btn-secondary-wellness,
+  .btn-outline-wellness {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .top-notice-bar {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .matrix-nav-pills {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .matrix-nav-pills .nav-link {
+    white-space: nowrap;
+    font-size: 0.825rem;
+    padding: 8px 16px !important;
+  }
+}
+
+/* Tablet Breakpoints (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-portrait-img {
+    height: 400px;
+  }
+
+  .floating-contact-dock {
+    bottom: 22px;
+    right: 20px;
+  }
+}
+
+/* Desktop Polish (>= 992px) */
+@media (min-width: 992px) {
+  .hero-section {
+    padding: 80px 0 100px;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .floating-btn.whatsapp-btn,
+  .floating-btn.call-btn {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Wellness Assessment | Habit Fix Wellness | Coach Raju Raut</title>
+  
+  <meta name="description" content="Take the free 3-minute Habit Fix Wellness Assessment. Identify key lifestyle patterns around food, hydration, sleep, and activity to receive personalized guidance from Coach Raju Raut.">
+  <meta name="keywords" content="Free Wellness Assessment, Weight Loss Assessment, Lifestyle Quiz, Habit Fix Wellness, Raju Raut">
+  <link rel="canonical" href="assessment.html">
+
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Multilingual Support & Contact) -->
+  <div class="top-notice-bar text-center">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2 mx-auto mx-md-0 mb-1 mb-md-0">
+        <i class="fa-solid fa-earth-americas text-warning"></i>
+        <span>International Wellness Coaching | <strong>English, हिन्दी, বাংলা</strong></span>
+      </div>
+      <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
+        <span class="d-none d-sm-inline"><i class="fa-regular fa-clock me-1"></i> Mon-Sat: 7:00 AM - 9:00 PM IST</span>
+        <a href="https://wa.me/919051231155" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp text-success me-1"></i> +91 90512 31155</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redesigned Main Header (5 Main Items Visible + Modern Responsive Mobile Drawer) -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand d-flex align-items-center py-0" href="index.html">
+          <img src="images/logo.svg" alt="Habit Fix Wellness Logo" class="site-header-logo">
+        </a>
+        
+        <!-- Mobile Right Actions: Quick BMI Tool + Animated Hamburger -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <a href="bmi-calculator.html" class="header-mobile-bmi-btn" title="Calculate Your BMI">
+            <i class="fa-solid fa-calculator"></i> BMI Tool
+          </a>
+          <button class="header-hamburger-btn navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavbarNav" aria-controls="siteNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+            <span class="ham-bar"></span>
+          </button>
+        </div>
+
+        <!-- Navigation Drawer (Desktop 5-items + Mobile Rich Drawer) -->
+        <div class="collapse navbar-collapse header-nav-collapse" id="siteNavbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 header-nav-list">
+            <!-- Item 1: About Coach -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Coach</a>
+            </li>
+
+            <!-- Item 2: Programs & Services (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Programs &amp; Services
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="programsDropdown">
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="services.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-layer-group text-primary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">All Wellness Services</div>
+                      <div class="header-dropdown-desc">Comprehensive personalized care plans</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="journey.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-flag-checkered text-success"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">21-Day Habit Journey <span class="badge bg-success ms-1 text-white">Flagship</span></div>
+                      <div class="header-dropdown-desc">Structured 3-week routine reset</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="global-coaching.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-globe text-info"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Global Online Coaching</div>
+                      <div class="header-dropdown-desc">USA, UK, UAE, Canada, Australia &amp; India</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="habit-support.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-handshake-angle text-warning"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Ongoing Habit Support</div>
+                      <div class="header-dropdown-desc">Long-term accountability &amp; maintenance</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Item 3: BMI Calculator (Featured Free Tool) -->
+            <li class="nav-item">
+              <a class="nav-link nav-link-bmi-featured" href="bmi-calculator.html">
+                <i class="fa-solid fa-calculator"></i> BMI Calculator <span class="badge-free-tool ms-1">Free Tool</span>
+              </a>
+            </li>
+
+            <!-- Item 4: Transformations -->
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Transformations</a>
+            </li>
+
+            <!-- Item 5: Resources & More (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Resources &amp; More
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="resourcesDropdown">
+                <li>
+                  <a class="dropdown-item header-dropdown-item active" href="assessment.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-clipboard-check text-success"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Free Wellness Assessment</div>
+                      <div class="header-dropdown-desc">3-Minute personalized lifestyle score</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="trackers.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-file-arrow-down text-primary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Downloadable Trackers</div>
+                      <div class="header-dropdown-desc">Free printable habit &amp; hydration logs</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="knowledge-hub.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-book-open text-warning"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Knowledge Hub Articles</div>
+                      <div class="header-dropdown-desc">Science-based wellness &amp; nutrition guides</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="start-here.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-compass text-secondary"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Start Here Guide</div>
+                      <div class="header-dropdown-desc">Step-by-step roadmap for beginners</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item header-dropdown-item" href="contact.html">
+                    <div class="header-dropdown-icon">
+                      <i class="fa-solid fa-headset text-danger"></i>
+                    </div>
+                    <div class="header-dropdown-text">
+                      <div class="header-dropdown-title">Contact &amp; Support</div>
+                      <div class="header-dropdown-desc">Direct reach to Coach Raju Raut</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Desktop Right Header Actions -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <div class="dropdown me-1">
+              <button class="btn btn-sm nav-lang-badge dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i> Eng
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('en')">English</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('hi')">हिन्दी (Hindi)</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" onclick="setLanguage('bn')">বাংলা (Bengali)</a></li>
+              </ul>
+            </div>
+            <a href="booking.html" class="btn btn-primary-wellness btn-sm px-3 shadow-sm">
+              BOOK A CALL
+            </a>
+          </div>
+
+          <!-- Mobile Drawer CTA Bottom Block -->
+          <div class="d-lg-none mobile-drawer-cta-group">
+            <a href="booking.html" class="btn btn-primary-wellness w-100 py-2">
+              <i class="fa-regular fa-calendar-check me-2"></i> Book 1-on-1 Consultation
+            </a>
+            <div class="d-flex gap-2">
+              <a href="assessment.html" class="btn btn-outline-wellness flex-fill btn-sm py-2 active">
+                <i class="fa-solid fa-clipboard-check me-1"></i> Assessment
+              </a>
+              <a href="https://wa.me/919051231155" target="_blank" rel="noopener" class="btn btn-success flex-fill btn-sm py-2 text-white">
+                <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp
+              </a>
+            </div>
+            <div class="mobile-drawer-lang-pills">
+              <span class="text-muted small">Language:</span>
+              <a href="javascript:void(0)" onclick="setLanguage('en')">English</a>
+              <a href="javascript:void(0)" onclick="setLanguage('hi')">हिन्दी</a>
+              <a href="javascript:void(0)" onclick="setLanguage('bn')">বাংলা</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FIXED FLOATING WHATSAPP & PHONE CALL BUTTONS -->
+  <div class="floating-contact-dock" id="floatingContactDock" aria-label="Quick Contact">
+    <a href="https://wa.me/919051231155?text=Hi%20Coach%20Raju,%20I%20have%20a%20question%20regarding%20the%20Wellness%20Assessment." 
+       class="floating-btn whatsapp-btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp">
+      <div class="pulse-ring pulse-ring-1"></div>
+      <div class="pulse-ring pulse-ring-2"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="floating-btn-tooltip">WhatsApp: +91 90512 31155</span>
+    </a>
+
+    <a href="tel:9051231155" 
+       class="floating-btn call-btn" 
+       title="Call Coach Raju">
+      <div class="pulse-ring pulse-ring-1"></div>
+      <div class="pulse-ring pulse-ring-2"></div>
+      <i class="fa-solid fa-phone"></i>
+      <span class="floating-btn-tooltip">Call: 9051231155</span>
+    </a>
+  </div>
+
+  <!-- Assessment Banner -->
+  <section class="py-5" style="background: radial-gradient(circle at 50% 10%, #F1FAEC 0%, #FFFFFF 70%);">
+    <div class="container text-center py-2">
+      <span class="badge-subtle mb-3"><i class="fa-solid fa-compass text-success"></i> Step 1: Connect &amp; Understand</span>
+      <h1 class="display-5 fw-bold text-dark mb-3">Free Wellness Assessment</h1>
+      <p class="section-lead mx-auto mb-3">
+        Start with understanding. Complete this 3-minute lifestyle audit to reflect on your current daily routine, food habits, and wellness goals.
+      </p>
+      <div class="d-flex justify-content-center gap-4 text-muted small">
+        <span><i class="fa-solid fa-clock text-success me-1"></i> Takes ~3 minutes</span>
+        <span><i class="fa-solid fa-lock text-success me-1"></i> 100% Confidential</span>
+        <span><i class="fa-solid fa-gift text-success me-1"></i> Free &amp; Non-Obligatory</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Assessment Container -->
+  <section class="pb-5" id="assessmentContainer" style="background-color: #FFFFFF;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          
+          <!-- Assessment Form Card -->
+          <div class="bg-white rounded-4 shadow-sm border border-soft p-4 p-md-5 reveal-zoom-in" id="assessmentFormCard">
+            
+            <!-- Progress Tracker -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fw-bold text-dark small">Stage <span id="stepCurrentNumber">1</span> of 3</span>
+                <span class="text-muted small">Personal Habit Profile</span>
+              </div>
+              <div class="progress" style="height: 8px; border-radius: 4px; background-color: #E2E8F0;">
+                <div class="progress-bar bg-success" id="assessmentProgressBar" role="progressbar" style="width: 33%;"></div>
+              </div>
+            </div>
+
+            <form id="wellnessAssessmentForm">
+              
+              <!-- STEP 1: Personal Information -->
+              <div class="assessment-step" id="step-1">
+                <h4 class="fw-bold text-dark mb-3">1. Personal Information</h4>
+                <p class="text-muted small mb-4">Tell us a little about yourself so Coach Raju can tailor your assessment accurately.</p>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="clientName" class="form-label fw-semibold small">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control form-control-lg fs-6" id="clientName" placeholder="e.g. Simran or Rahul" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientCountry" class="form-label fw-semibold small">Country of Residence <span class="text-danger">*</span></label>
+                    <select class="form-select form-select-lg fs-6" id="clientCountry" required>
+                      <option value="" disabled selected>Select your country</option>
+                      <option value="India">India</option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Other">Other Country</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientAge" class="form-label fw-semibold small">Age Range <span class="text-danger">*</span></label>
+                    <select class="form-select form-select-lg fs-6" id="clientAge" required>
+                      <option value="" disabled selected>Select age bracket</option>
+                      <option value="18 - 25">18 - 25 years</option>
+                      <option value="26 - 35">26 - 35 years</option>
+                      <option value="36 - 45">36 - 45 years</option>
+                      <option value="46 - 55">46 - 55 years</option>
+                      <option value="56+">56+ years</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientLang" class="form-label fw-semibold small">Preferred Language <span class="text-danger">*</span></label>
+                    <select class="form-select form-select-lg fs-6" id="clientLang" required>
+                      <option value="English" selected>English</option>
+                      <option value="Hindi">हिन्दी (Hindi)</option>
+                      <option value="Bengali">বাংলা (Bengali)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientEmail" class="form-label fw-semibold small">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control form-control-lg fs-6" id="clientEmail" placeholder="yourname@domain.com" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientPhone" class="form-label fw-semibold small">WhatsApp / Phone Number</label>
+                    <input type="tel" class="form-control form-control-lg fs-6" id="clientPhone" placeholder="+91 or international code">
+                    <small class="text-muted" style="font-size: 0.75rem;">Optional, used for direct habit assessment summary</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: Primary Wellness Goal -->
+              <div class="assessment-step d-none" id="step-2">
+                <h4 class="fw-bold text-dark mb-3">2. Primary Wellness Goal</h4>
+                <p class="text-muted small mb-4">What is the most important health or lifestyle area you would like to focus on?</p>
+
+                <div class="d-flex flex-column gap-3 mb-4">
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="Healthy Weight Management" class="form-check-input mt-0" checked>
+                    <div>
+                      <strong class="text-dark">Healthy Weight Management</strong>
+                      <div class="text-muted small">Build sustainable habits to lose or manage weight without crash diets.</div>
+                    </div>
+                  </label>
+
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="Better Food Habits & Nutrition Awareness" class="form-check-input mt-0">
+                    <div>
+                      <strong class="text-dark">Better Food Habits &amp; Nutrition Awareness</strong>
+                      <div class="text-muted small">Understand mindful eating, avoid late night snacking, and balance your meals.</div>
+                    </div>
+                  </label>
+
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="More Physical Activity & Movement" class="form-check-input mt-0">
+                    <div>
+                      <strong class="text-dark">More Physical Activity &amp; Movement</strong>
+                      <div class="text-muted small">Overcome sedentary desk lifestyle and integrate consistent movement.</div>
+                    </div>
+                  </label>
+
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="Better Daily Routine & Consistency" class="form-check-input mt-0">
+                    <div>
+                      <strong class="text-dark">Better Daily Routine &amp; Consistency</strong>
+                      <div class="text-muted small">Overcome procrastination, build morning/evening rhythms, and stay on track.</div>
+                    </div>
+                  </label>
+
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="Restful Sleep & Recovery" class="form-check-input mt-0">
+                    <div>
+                      <strong class="text-dark">Restful Sleep &amp; Recovery</strong>
+                      <div class="text-muted small">Improve sleep quality, reduce evening screen fatigue, and wake up refreshed.</div>
+                    </div>
+                  </label>
+
+                  <label class="p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer hover-bg-light">
+                    <input type="radio" name="wellnessGoal" value="General Holistic Wellness" class="form-check-input mt-0">
+                    <div>
+                      <strong class="text-dark">General Holistic Wellness &amp; Longevity</strong>
+                      <div class="text-muted small">Long term vitality and feeling energetic throughout the day.</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 3: Lifestyle Habits & Obstacles -->
+              <div class="assessment-step d-none" id="step-3">
+                <h4 class="fw-bold text-dark mb-3">3. Everyday Lifestyle &amp; Daily Patterns</h4>
+                <p class="text-muted small mb-4">Help us understand how your typical day looks right now.</p>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="clientActivity" class="form-label fw-semibold small">Current Activity Level <span class="text-danger">*</span></label>
+                    <select class="form-select fs-6" id="clientActivity" required>
+                      <option value="Sedentary (Desk Job, < 3K steps)">Sedentary (Desk Job, &lt; 3,000 steps)</option>
+                      <option value="Light Movement (Casual walking 1-2x/wk)">Light Movement (Casual walking 1-2x/week)</option>
+                      <option value="Moderate (3-4x/week)">Moderate (3-4x/week regular exercise)</option>
+                      <option value="Active (High physical movement)">Active (High daily physical movement)</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientHydration" class="form-label fw-semibold small">Typical Daily Water Intake <span class="text-danger">*</span></label>
+                    <select class="form-select fs-6" id="clientHydration" required>
+                      <option value="Less than 1 Liter">Less than 1 Liter (Often forget)</option>
+                      <option value="1-2 Liters" selected>1 to 2 Liters</option>
+                      <option value="2-3 Liters">2 to 3 Liters (Consistent)</option>
+                      <option value="3+ Liters">More than 3 Liters</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientFoodHabit" class="form-label fw-semibold small">Current Eating Pattern <span class="text-danger">*</span></label>
+                    <select class="form-select fs-6" id="clientFoodHabit" required>
+                      <option value="Irregular meals / skip breakfast">Irregular meals / skip breakfast</option>
+                      <option value="Home-cooked but heavy portions">Home-cooked but heavy portions</option>
+                      <option value="Frequent dining out / food delivery">Frequent dining out / food delivery</option>
+                      <option value="Late night snacking / sweet cravings">Late night snacking / sweet cravings</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="clientSleep" class="form-label fw-semibold small">Typical Sleep Hours <span class="text-danger">*</span></label>
+                    <select class="form-select fs-6" id="clientSleep" required>
+                      <option value="Less than 6 Hours">Less than 6 Hours (Feel tired)</option>
+                      <option value="6-7 Hours Broken" selected>6 to 7 Hours (Often broken)</option>
+                      <option value="7-8 Hours Restful">7 to 8 Hours (Restful)</option>
+                      <option value="Irregular shift sleep">Irregular shift sleep</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="clientChallenge" class="form-label fw-semibold small">What has been your biggest challenge in the past? <span class="text-danger">*</span></label>
+                    <select class="form-select fs-6" id="clientChallenge" required>
+                      <option value="Consistency & Lack of Accountability">Staying consistent when life gets busy</option>
+                      <option value="Lack of Time for Meal Prep or Exercise">Lack of time due to demanding work or family</option>
+                      <option value="Emotional Eating & Sugar Cravings">Stress, emotional eating, and cravings</option>
+                      <option value="Confusion from Conflicting Diet Advice">Confusion from too many conflicting diet trends</option>
+                      <option value="Slowing Metabolism & Fatigue">Feeling low on energy and sluggish</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="clientMainGoalText" class="form-label fw-semibold small">Any specific goal or message for Coach Raju? (Optional)</label>
+                    <textarea class="form-control fs-6" id="clientMainGoalText" rows="3" placeholder="e.g. I want to lose 8 kg for my health and be able to play with my kids without feeling out of breath."></textarea>
+                  </div>
+
+                  <!-- Mandatory Consent Checkbox -->
+                  <div class="col-12 mt-4">
+                    <div class="form-check p-3 rounded-3 bg-light border border-light-subtle">
+                      <input class="form-check-input" type="checkbox" id="consentCheckbox" required>
+                      <label class="form-check-label small text-secondary" for="consentCheckbox">
+                        I agree to the collection and use of the information I provide for the purpose of responding to my wellness enquiry, according to the <a href="privacy.html" target="_blank" class="fw-bold text-success">Privacy Policy</a>. (Your details are strictly confidential and never shared with third parties).
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation Controls -->
+              <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                <button type="button" class="btn btn-secondary-wellness d-none" id="prevStepBtn">
+                  <i class="fa-solid fa-arrow-left"></i> Previous Step
+                </button>
+                <div class="ms-auto">
+                  <button type="button" class="btn btn-primary-wellness" id="nextStepBtn">
+                    Next Step <i class="fa-solid fa-arrow-right ms-1"></i>
+                  </button>
+                  <button type="submit" class="btn btn-primary-wellness d-none" id="submitAssessmentBtn">
+                    <i class="fa-solid fa-paper-plane me-1"></i> SUBMIT MY WELLNESS ASSESSMENT
+                  </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Assessment Result Screen (Revealed on submission) -->
+          <div class="bg-white rounded-4 shadow-sm border border-soft p-4 p-md-5 d-none text-center reveal-zoom-in" id="assessmentResultCard">
+            <div class="d-inline-flex align-items-center justify-content-center p-3 rounded-circle bg-success-subtle text-success mb-3" style="width: 72px; height: 72px;">
+              <i class="fa-solid fa-circle-check fs-1"></i>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">Assessment Received, <span id="resultClientName">Friend</span>!</h3>
+            <p class="text-muted mb-4">Here is your preliminary wellness habit baseline overview.</p>
+
+            <div class="p-4 rounded-3 text-start mb-4" style="background-color: #F4FAF0; border: 1px solid #CBE6BC;">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-bold text-dark">Lifestyle Habit Readiness:</span>
+                <span class="badge bg-success fs-6" id="resultScoreText">85/100</span>
+              </div>
+              <div class="mb-2">
+                <strong class="text-dark small">Primary Focus Area:</strong>
+                <span class="text-secondary small ms-1" id="resultGoalText">Healthy Weight Management</span>
+              </div>
+              <p class="small text-secondary mb-0" id="resultSummaryText">
+                Based on your daily routine, food habits, and hydration patterns, small structured adjustments can yield significant sustainable transformations without extreme restrictions.
+              </p>
+            </div>
+
+            <p class="text-dark fw-semibold mb-3">
+              Would you like to review this assessment directly with Coach Raju Raut on WhatsApp?
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+              <a href="#" class="btn btn-primary-wellness" id="resultWhatsAppBtn" target="_blank">
+                <i class="fa-brands fa-whatsapp fs-5"></i> Discuss My Assessment on WhatsApp (+91 90512 31155)
+              </a>
+              <a href="booking.html" class="btn btn-secondary-wellness">
+                <i class="fa-regular fa-calendar-check"></i> Book a 1-on-1 Consultation Call
+              </a>
+            </div>
+
+            <button type="button" class="btn btn-link text-muted small text-decoration-none" id="retakeAssessmentBtn">
+              <i class="fa-solid fa-rotate-left me-1"></i> Edit or Retake Assessment
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo.svg" alt="Habit Fix Wellness" style="height: 44px; filter: brightness(0) invert(1);">
+          </div>
+          <p class="small text-secondary mb-3">
+            <strong>Habit Fix Wellness</strong><br>
+            Founder &amp; Wellness Coach: <strong>Raju Raut</strong><br>
+            <em>Build Better Habits. Feel Better. Live Better.</em>
+          </p>
+          <div class="footer-social-links">
+            <a href="https://wa.me/919051231155" target="_blank" class="footer-social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:9051231155" class="footer-social-btn" title="Call"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Coach</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Call</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Client Support</h5>
+          <ul class="footer-links">
+            <li><a href="knowledge-hub.html">Knowledge Hub</a></li>
+            <li><a href="knowledge-hub.html#free-resources">Download Trackers</a></li>
+            <li><a href="disclaimer.html">Medical Disclaimer</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Refunds</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Direct Contact</h5>
+          <div class="text-secondary small mb-3">
+            <div class="mb-2"><i class="fa-solid fa-phone text-success me-2"></i><strong>Phone:</strong> <a href="tel:9051231155" class="text-white">9051231155</a></div>
+            <div class="mb-2"><i class="fa-brands fa-whatsapp text-success me-2"></i><strong>WhatsApp:</strong> <a href="https://wa.me/919051231155" target="_blank" class="text-white">+91 90512 31155</a></div>
+            <div class="mb-2"><i class="fa-regular fa-envelope text-success me-2"></i><strong>Email:</strong> <a href="mailto:coach@habitfixwellness.com" class="text-white">coach@habitfixwellness.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-box">
+        <strong>Important Wellness Disclaimer:</strong> Habit Fix Wellness provides general lifestyle education, wellness guidance, and habit coaching. It is not medical treatment or dietary diagnosis.
+      </div>
+
+      <div class="footer-bottom-bar d-flex flex-wrap justify-content-between align-items-center">
+        <div>&copy; 2026 Habit Fix Wellness. All Rights Reserved. Founder: Raju Raut.</div>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <a href="privacy.html" class="text-secondary small">Privacy Policy</a>
+          <span class="text-secondary">•</span>
+          <a href="disclaimer.html" class="text-secondary small">Medical Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/assessment.js"></script>
+</body>
+</html>
