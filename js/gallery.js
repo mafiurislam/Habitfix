@@ -18,7 +18,10 @@
         $('.gallery-item').fadeIn(300);
       } else {
         $('.gallery-item').hide();
-        $(`.gallery-item[data-category="${filterValue}"]`).fadeIn(300);
+        $('.gallery-item').filter(function () {
+          const cats = ($(this).data('category') || '').toString().split(/\s+/);
+          return cats.includes(filterValue);
+        }).fadeIn(300);
       }
     });
 

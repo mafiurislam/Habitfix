@@ -34,7 +34,12 @@
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
       <div class="d-flex align-items-center gap-2 mx-auto mx-md-0 mb-1 mb-md-0">
         <i class="fa-solid fa-earth-americas text-warning"></i>
-        <span>International Wellness Coaching | <strong>English, हिन्दी, বাংলা</strong></span>
+        <span>International Wellness Coaching</span>
+        <div class="lang-selector-group ms-2">
+          <button type="button" class="lang-btn active" data-lang="en" title="English">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi" title="हिन्दी (Hindi)">हिन्दी</button>
+          <button type="button" class="lang-btn" data-lang="bn" title="বাংলা (Bengali)">বাংলা</button>
+        </div>
       </div>
       <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
         <span class="d-none d-sm-inline"><i class="fa-regular fa-clock me-1"></i> Mon-Sat: 7:00 AM - 9:00 PM IST</span>
@@ -65,6 +70,15 @@
 
         <!-- Navigation Drawer (Desktop 5-items + Mobile Rich Drawer) -->
         <div class="collapse navbar-collapse header-nav-collapse" id="siteNavbarNav">
+          <!-- Mobile Drawer Language Selector -->
+          <div class="d-lg-none mobile-lang-drawer-box mt-3">
+            <div class="small fw-bold text-muted mb-2"><i class="fa-solid fa-language text-success me-1"></i> Select Language / ভাষা / भाषा:</div>
+            <div class="lang-buttons-row">
+              <button type="button" class="mobile-lang-btn active" data-lang="en">English</button>
+              <button type="button" class="mobile-lang-btn" data-lang="hi">हिन्दी</button>
+              <button type="button" class="mobile-lang-btn" data-lang="bn">বাংলা</button>
+            </div>
+          </div>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 header-nav-list">
             <!-- Item 1: About Coach -->
             <li class="nav-item">
@@ -203,6 +217,16 @@
 
           <!-- Desktop Right Header Actions -->
           <div class="d-none d-lg-flex align-items-center gap-2">
+            <div class="dropdown me-1">
+              <button class="header-lang-btn dropdown-toggle" type="button" id="headerLangDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="currentLangBadge"><i class="fa-solid fa-language me-1 text-success"></i> English</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end lang-dropdown-menu shadow-sm" aria-labelledby="headerLangDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><span>English</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="hi"><span>हिन्दी (Hindi)</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="bn"><span>বাংলা (Bengali)</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+              </ul>
+            </div>
             <a href="booking.html" class="btn btn-primary-wellness btn-sm px-3 shadow-sm">
               BOOK A CALL
             </a>
@@ -426,7 +450,7 @@
           <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-1 rounded-pill mb-2">SERVICE 06 • INTERACTIVE TOOL</span>
           <h2 class="fw-bold text-dark mb-3">Smart BMI &amp; Body Metrics Assessment</h2>
           <p class="text-secondary">
-            Determine your baseline Body Mass Index (BMI), ideal healthy weight range, estimated basal metabolic burn (TDEE), and tailored daily hydration targets using our clinical interactive calculator.
+            Determine your baseline Body Mass Index (BMI), ideal healthy weight range, estimated basal metabolic burn (TDEE), and tailored daily hydration targets using our interactive wellness calculator.
           </p>
           <div class="row g-2 mb-4">
             <div class="col-sm-6"><i class="fa-solid fa-circle-check text-success me-2"></i> Instant visual BMI spectrum needle</div>

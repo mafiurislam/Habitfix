@@ -34,7 +34,12 @@
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
       <div class="d-flex align-items-center gap-2 mx-auto mx-md-0 mb-1 mb-md-0">
         <i class="fa-solid fa-earth-americas text-warning"></i>
-        <span>International Wellness Coaching | <strong>English, हिन्दी, বাংলা</strong></span>
+        <span>International Wellness Coaching</span>
+        <div class="lang-selector-group ms-2">
+          <button type="button" class="lang-btn active" data-lang="en" title="English">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi" title="हिन्दी (Hindi)">हिन्दी</button>
+          <button type="button" class="lang-btn" data-lang="bn" title="বাংলা (Bengali)">বাংলা</button>
+        </div>
       </div>
       <div class="d-flex align-items-center gap-3 mx-auto mx-md-0">
         <span class="d-none d-sm-inline"><i class="fa-regular fa-clock me-1"></i> Mon-Sat: 7:00 AM - 9:00 PM IST</span>
@@ -65,6 +70,16 @@
 
         <!-- Navigation Drawer (Desktop 5-items + Mobile Rich Drawer) -->
         <div class="collapse navbar-collapse header-nav-collapse" id="siteNavbarNav">
+          <!-- Mobile Drawer Language Selector -->
+          <div class="d-lg-none mobile-lang-drawer-box mt-3">
+            <div class="small fw-bold text-muted mb-2"><i class="fa-solid fa-language text-success me-1"></i> Select Language / ভাষা / भाषा:</div>
+            <div class="lang-buttons-row">
+              <button type="button" class="mobile-lang-btn active" data-lang="en">English</button>
+              <button type="button" class="mobile-lang-btn" data-lang="hi">हिन्दी</button>
+              <button type="button" class="mobile-lang-btn" data-lang="bn">বাংলা</button>
+            </div>
+          </div>
+
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 header-nav-list">
             <!-- Item 1: About Coach -->
             <li class="nav-item">
@@ -203,6 +218,16 @@
 
           <!-- Desktop Right Header Actions -->
           <div class="d-none d-lg-flex align-items-center gap-2">
+            <div class="dropdown me-1">
+              <button class="header-lang-btn dropdown-toggle" type="button" id="headerLangDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="currentLangBadge"><i class="fa-solid fa-language me-1 text-success"></i> English</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end lang-dropdown-menu shadow-sm" aria-labelledby="headerLangDropdown">
+                <li><a class="dropdown-item active" href="#" data-lang="en"><span>English</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="hi"><span>हिन्दी (Hindi)</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+                <li><a class="dropdown-item" href="#" data-lang="bn"><span>বাংলা (Bengali)</span> <i class="fa-solid fa-check check-icon"></i></a></li>
+              </ul>
+            </div>
             <a href="booking.html" class="btn btn-primary-wellness btn-sm px-3 shadow-sm">
               BOOK A CALL
             </a>
@@ -337,7 +362,7 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="col-lg-4 col-md-6 gallery-item reveal-on-scroll delay-300" data-category="weight-loss">
+        <div class="col-lg-4 col-md-6 gallery-item reveal-on-scroll delay-300" data-category="weight-loss energy">
           <div class="transformation-card">
             <div class="transformation-img-container open-transformation-modal">
               <img src="images/transformations/transformation-3.jpg" alt="Rajesh K. - Age 42 Lifestyle Shift">
@@ -354,84 +379,6 @@
               </div>
               <p class="transformation-quote text-secondary small flex-grow-1">
                 "At 42, I thought carrying excess weight was inevitable. Raju taught me that small, sustainable habit corrections add up faster than extreme gym routines. Truly life changing."
-              </p>
-              <button class="btn btn-outline-wellness btn-sm open-transformation-modal mt-2">
-                <i class="fa-solid fa-magnifying-glass-plus me-1"></i> View Full Journey
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4 (Energy / Consistency Focus) -->
-        <div class="col-lg-4 col-md-6 gallery-item reveal-on-scroll delay-100" data-category="energy">
-          <div class="transformation-card">
-            <div class="transformation-img-container open-transformation-modal">
-              <img src="images/transformations/transformation-1.jpg" alt="Vikram M. - Energy & Movement Habit">
-              <span class="transformation-badge-duration">60-Day Habit Shift</span>
-              <span class="transformation-badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
-            </div>
-            <div class="transformation-content">
-              <h5 class="transformation-title fw-bold text-dark mb-1">Vikram M.</h5>
-              <div class="transformation-client-info text-muted small">Kolkata, India • Architect</div>
-              <div class="habit-tags">
-                <span class="habit-tag">Desk Posture</span>
-                <span class="habit-tag">Consistent Breakfast</span>
-                <span class="habit-tag">Brisk Walk</span>
-              </div>
-              <p class="transformation-quote text-secondary small flex-grow-1">
-                "My 3 PM sugar cravings disappeared once Coach Raju showed me how to properly balance my morning plate and hydrate consistently. Lost 6 kg without ever feeling hungry."
-              </p>
-              <button class="btn btn-outline-wellness btn-sm open-transformation-modal mt-2">
-                <i class="fa-solid fa-magnifying-glass-plus me-1"></i> View Full Journey
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 5 (Routine / International Client) -->
-        <div class="col-lg-4 col-md-6 gallery-item reveal-on-scroll delay-200" data-category="routine">
-          <div class="transformation-card">
-            <div class="transformation-img-container open-transformation-modal">
-              <img src="images/transformations/transformation-2.jpg" alt="Ananya T. - Routine Consistency">
-              <span class="transformation-badge-duration">21-Day Kickoff + 60-Day Review</span>
-              <span class="transformation-badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
-            </div>
-            <div class="transformation-content">
-              <h5 class="transformation-title fw-bold text-dark mb-1">Ananya T.</h5>
-              <div class="transformation-client-info text-muted small">London, UK • Financial Analyst</div>
-              <div class="habit-tags">
-                <span class="habit-tag">Timezone Management</span>
-                <span class="habit-tag">Meal Prep System</span>
-                <span class="habit-tag">Deep Sleep</span>
-              </div>
-              <p class="transformation-quote text-secondary small flex-grow-1">
-                "Living in London with unpredictable hours made healthy eating seem impossible. Raju helped me create a repeatable weekly routine that fits my calendar seamlessly."
-              </p>
-              <button class="btn btn-outline-wellness btn-sm open-transformation-modal mt-2">
-                <i class="fa-solid fa-magnifying-glass-plus me-1"></i> View Full Journey
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 6 (Weight Loss / Waistline) -->
-        <div class="col-lg-4 col-md-6 gallery-item reveal-on-scroll delay-300" data-category="weight-loss">
-          <div class="transformation-card">
-            <div class="transformation-img-container open-transformation-modal">
-              <img src="images/transformations/transformation-3.jpg" alt="Sunil D. - Weight Management">
-              <span class="transformation-badge-duration">80-Day Lifestyle Shift</span>
-              <span class="transformation-badge-verified"><i class="fa-solid fa-check"></i> Verified</span>
-            </div>
-            <div class="transformation-content">
-              <h5 class="transformation-title fw-bold text-dark mb-1">Sunil D.</h5>
-              <div class="transformation-client-info text-muted small">Hyderabad, India • Consultant</div>
-              <div class="habit-tags">
-                <span class="habit-tag">Zero Late Dinners</span>
-                <span class="habit-tag">Water Before Coffee</span>
-                <span class="habit-tag">10K Steps</span>
-              </div>
-              <p class="transformation-quote text-secondary small flex-grow-1">
-                "I was skeptical about online wellness coaching until my second week. Raju's focus on one small change at a time removed all friction. Down two pant sizes and feeling energetic!"
               </p>
               <button class="btn btn-outline-wellness btn-sm open-transformation-modal mt-2">
                 <i class="fa-solid fa-magnifying-glass-plus me-1"></i> View Full Journey
@@ -508,7 +455,6 @@
           <div class="footer-social-links">
             <a href="https://wa.me/919051231155" target="_blank" class="footer-social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="tel:9051231155" class="footer-social-btn" title="Call"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://instagram.com" target="_blank" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
 
