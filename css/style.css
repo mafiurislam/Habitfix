@@ -928,51 +928,262 @@ img {
   box-shadow: var(--shadow-green);
 }
 
-/* Card Transitions */
+/* ==========================================================================
+   COMPACT TRANSFORMATION CARDS & REAL PEOPLE SECTION REDESIGN
+   ========================================================================== */
 .transformation-card {
   background: #FFFFFF;
-  border: 1px solid rgba(79, 157, 19, 0.15);
-  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(79, 157, 19, 0.18);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(27, 59, 24, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  cursor: pointer;
 }
 
 .transformation-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -6px rgba(46, 125, 50, 0.2), 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-color: #2E7D32;
 }
 
 .transformation-img-container {
   position: relative;
   overflow: hidden;
-  background: #EAF0E8;
+  background: #0E1A0C;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  border-bottom: 1.5px solid rgba(79, 157, 19, 0.2);
 }
 
-.transformation-img-container img {
+@media (max-width: 991px) {
+  .transformation-img-container {
+    height: 230px;
+  }
+}
+
+@media (max-width: 575px) {
+  .transformation-img-container {
+    height: 210px;
+  }
+}
+
+/* Ambient blurred backdrop so letterboxed spaces blend harmoniously */
+.img-ambient-glow {
+  position: absolute;
+  inset: -15px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(24px) brightness(0.6) saturate(1.4);
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+/* Main Before-and-After Image: 100% visible from top, NEVER cropped */
+.transformation-main-img {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: 290px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center top !important;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.transformation-card:hover .transformation-img-container img {
-  transform: scale(1.04);
+.transformation-card:hover .transformation-main-img {
+  transform: scale(1.03);
+}
+
+/* Duration & Verified Badges */
+.transformation-badge-duration {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(20, 50, 18, 0.94) 0%, rgba(46, 125, 50, 0.96) 100%);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.2px;
+}
+
+.transformation-badge-verified {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1B5E20;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(79, 157, 19, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-tap-zoom {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 3;
+  background: rgba(14, 26, 12, 0.78);
+  color: #E8F5E9;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.transformation-card:hover .badge-tap-zoom {
+  background: #2E7D32;
+  color: #FFFFFF;
+  border-color: #2E7D32;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.35);
+}
+
+/* Card Body Content - Compact, No Description, No Button */
+.transformation-content {
+  padding: 12px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #FFFFFF;
+}
+
+.transformation-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #122810;
+  margin-bottom: 2px;
+  letter-spacing: -0.2px;
+}
+
+.transformation-client-info {
+  font-size: 0.78rem;
+  color: #5F6E5B;
+  margin-bottom: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Colorful Habit & Metric Tags */
+.habit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0;
 }
 
 .habit-tag {
-  background: var(--primary-light);
-  color: var(--primary-dark);
-  font-size: 0.775rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  padding: 5px 12px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--primary-border);
+  padding: 3px 9px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.habit-tag:hover {
+  transform: translateY(-1px);
+}
+
+.habit-tag-metric {
+  background: #FFECE8;
+  color: #B02A1A;
+  border-color: #F8C4BC;
+}
+
+.habit-tag-nutrition {
+  background: #EAF7EB;
+  color: #1B5E20;
+  border-color: #BEE3C3;
+}
+
+.habit-tag-activity {
+  background: #E8F4FD;
+  color: #1565C0;
+  border-color: #BBDEFB;
+}
+
+.habit-tag-routine {
+  background: #F3EBF9;
+  color: #6A1B9A;
+  border-color: #E1BEE7;
+}
+
+.habit-tag-energy {
+  background: #FEF8E7;
+  color: #9A7B0A;
+  border-color: #F9E79F;
+}
+
+/* Section Filter Tabs on Homepage */
+.transformations-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.transformations-filter-btn {
+  background: #FFFFFF;
+  border: 1.5px solid #CFE2CE;
+  color: #2D4A27;
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 7px 18px;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.transformations-filter-btn:hover {
+  background: #EAF4E8;
+  border-color: #2E7D32;
+  color: #1B5E20;
+}
+
+.transformations-filter-btn.active {
+  background: #2E7D32;
+  border-color: #2E7D32;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
 }
 
 /* Footer Styling */
