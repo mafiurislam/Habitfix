@@ -1,0 +1,567 @@
+/* ==========================================================================
+   EXACT REFERENCE BMI CALCULATOR STYLES
+   Pixel-perfect match to reference design (Calculator.net standard)
+   ========================================================================== */
+
+.calc-ref-outer {
+  width: 100%;
+  max-width: 690px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  background: #ffffff;
+  padding: 15px 15px 25px 15px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* 1. Header with title & print link */
+.calc-ref-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+  padding: 0 1px;
+}
+
+.calc-ref-heading {
+  color: #003366 !important;
+  font-size: 27px !important;
+  font-weight: bold !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+}
+
+.calc-ref-print {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calc-ref-print a {
+  color: #006699;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.calc-ref-print a:hover {
+  text-decoration: none;
+}
+
+/* 2. Steel blue instruction banner */
+.calc-ref-banner {
+  background-color: #336699;
+  color: #ffffff;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 35px;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.calc-ref-banner-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.calc-ref-banner-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #336699;
+}
+
+.calc-ref-banner-text {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1px;
+}
+
+/* 3. Main 2-column layout */
+.calc-ref-grid {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* 4. Left column: Tabs & Input Form */
+.calc-ref-left {
+  width: 325px;
+  flex-shrink: 0;
+}
+
+/* Tab Headers */
+.calc-ref-tabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: none;
+}
+
+.calc-ref-tab-item {
+  margin: 0;
+  padding: 0;
+}
+
+.calc-ref-tab-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 13px 7px 13px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  cursor: pointer;
+  border: 1px solid #336699;
+  background: #2f6997;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 2px;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.calc-ref-tab-btn:hover {
+  background: #25577e;
+  color: #ffffff;
+}
+
+.calc-ref-tab-btn.active {
+  background: #eeeeee;
+  color: #000000;
+  border: 1px solid #b8b8b8;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 3;
+  cursor: default;
+}
+
+/* Form Container Box */
+.calc-ref-panel {
+  background-color: #eeeeee;
+  border: 1px solid #b8b8b8;
+  padding: 14px 14px 12px 14px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.calc-ref-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.calc-ref-row.align-top {
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+.calc-ref-label {
+  width: 58px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  flex-shrink: 0;
+}
+
+.calc-ref-field-cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+/* Text Inputs with In-box Unit Labels */
+.calc-ref-unit-box {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.calc-ref-unit-box.box-half {
+  width: 104px;
+}
+
+.calc-ref-unit-box.box-full {
+  width: 218px;
+}
+
+.calc-ref-in-age {
+  width: 104px;
+}
+
+.calc-ref-unit-box input,
+.calc-ref-in-age,
+.calc-ref-select {
+  width: 100%;
+  height: 29px;
+  padding: 3px 6px;
+  border: 1px solid #044284;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #777;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.calc-ref-unit-box input:focus,
+.calc-ref-in-age:focus,
+.calc-ref-select:focus {
+  border-color: #002244;
+  box-shadow: 1px 1px 3px #444;
+}
+
+.calc-ref-unit-box.box-half input {
+  padding-right: 46px;
+}
+
+.calc-ref-unit-box.box-full input {
+  padding-right: 56px;
+}
+
+.calc-ref-unit-tag {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777777;
+  font-size: 13.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+.calc-ref-hint {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* Radio buttons matching reference image */
+.calc-ref-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calc-ref-radio-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin: 0;
+  user-select: none;
+}
+
+.calc-ref-radio-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.calc-ref-radio-circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 2px solid #336699;
+  border-radius: 50%;
+  margin-right: 6px;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.calc-ref-radio-label:hover .calc-ref-radio-circle {
+  border-color: #1f476d;
+}
+
+.calc-ref-radio-label input[type="radio"]:checked ~ .calc-ref-radio-circle {
+  background-color: #336699;
+  border-color: #336699;
+}
+
+.calc-ref-radio-label input[type="radio"]:checked ~ .calc-ref-radio-circle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* Buttons */
+.calc-ref-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 12px;
+  gap: 6px;
+}
+
+.calc-ref-btn-calc {
+  border: 0;
+  color: #ffffff;
+  padding: 6px 14px 6px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #4c7b25;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.2;
+  transition: background 0.15s ease;
+}
+
+.calc-ref-btn-calc:hover {
+  background-color: #3f661f;
+}
+
+.calc-ref-play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #8fbc8f;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.calc-ref-play-icon svg {
+  width: 9px;
+  height: 9px;
+  fill: #ffffff;
+  margin-left: 2px;
+}
+
+.calc-ref-btn-clear {
+  border: 0;
+  color: #ffffff;
+  padding: 7px 16px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ababab;
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background 0.15s ease;
+}
+
+.calc-ref-btn-clear:hover {
+  background-color: #555555;
+}
+
+/* 5. Right column: Result Banner, Score Headline, and Speedometer Gauge */
+.calc-ref-right {
+  width: 325px;
+  flex-shrink: 0;
+}
+
+/* Green Result Header */
+.calc-ref-result-bar {
+  background-color: #4c7b25;
+  color: #ffffff;
+  height: 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+.calc-ref-result-title {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  line-height: 31px;
+}
+
+.calc-ref-save-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 1px 2px;
+  user-select: none;
+}
+
+.calc-ref-save-action:hover svg {
+  opacity: 0.85;
+}
+
+.calc-ref-save-action svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+.calc-ref-save-action span {
+  font-size: 8.5px;
+  color: #ffffff;
+  line-height: 1;
+  margin-top: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Headline result text */
+.calc-ref-result-headline {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 6px 0 6px 0;
+  color: #000000;
+  line-height: 1.25;
+}
+
+.calc-ref-result-headline b {
+  font-weight: bold;
+}
+
+.calc-ref-category-val {
+  font-weight: bold;
+  color: #008137;
+}
+
+/* SVG Speedometer Gauge Container */
+.calc-ref-gauge-wrap {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.calc-ref-gauge-svg {
+  width: 300px;
+  height: 163px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Needle styling */
+#refGaugeNeedle {
+  stroke: #555555;
+  stroke-width: 2.5px;
+}
+
+/* Detailed info bullet points */
+.calc-ref-details {
+  margin-top: 12px;
+  padding-left: 18px;
+  font-size: 13.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222222;
+  line-height: 1.55;
+}
+
+.calc-ref-details li {
+  margin-bottom: 3px;
+}
+
+/* Toast alert notification */
+.calc-ref-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #003366;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  z-index: 9999;
+  display: none;
+  animation: calcToastFade 0.3s ease;
+}
+
+@keyframes calcToastFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 680px) {
+  .calc-ref-outer {
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .calc-ref-banner-text {
+    font-size: 13.5px;
+  }
+  
+  .calc-ref-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .calc-ref-left,
+  .calc-ref-right {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .calc-ref-result-headline {
+    text-align: center;
+  }
+}
+
+/* Print view optimization */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .calc-ref-outer,
+  .calc-ref-outer * {
+    visibility: visible;
+  }
+  .calc-ref-outer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .calc-ref-print,
+  .calc-ref-save-action,
+  .calc-ref-btn-clear {
+    display: none !important;
+  }
+}

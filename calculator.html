@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="css/reference-bmi.css">
+  <style>
+    body {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EXACT REFERENCE BMI CALCULATOR -->
+  <div class="calc-ref-outer">
+
+    <!-- Top bar: Title & Print link -->
+    <div class="calc-ref-topbar">
+      <h1 class="calc-ref-heading">BMI Calculator</h1>
+      <div class="calc-ref-print">
+        <a href="#" id="refBtnPrint">Print</a>
+      </div>
+    </div>
+
+    <!-- Blue instruction bar with down-arrow circle -->
+    <div class="calc-ref-banner">
+      <div class="calc-ref-banner-icon">
+        <svg viewBox="0 0 24 24">
+          <polygon points="6,9 18,9 12,16" />
+        </svg>
+      </div>
+      <div class="calc-ref-banner-text">Modify the values and click the Calculate button to use</div>
+    </div>
+
+    <!-- Main Two-Column Container -->
+    <div class="calc-ref-grid">
+
+      <!-- LEFT COLUMN: Tabs & Form Panel -->
+      <div class="calc-ref-left">
+        <!-- Tabs Header -->
+        <ul class="calc-ref-tabs">
+          <li class="calc-ref-tab-item">
+            <a href="#" class="calc-ref-tab-btn active" id="refTabUs">US Units</a>
+          </li>
+          <li class="calc-ref-tab-item">
+            <a href="#" class="calc-ref-tab-btn" id="refTabMetric">Metric Units</a>
+          </li>
+          <li class="calc-ref-tab-item">
+            <a href="#" class="calc-ref-tab-btn" id="refTabOther">Other Units</a>
+          </li>
+        </ul>
+
+        <!-- Input Panel Body -->
+        <div class="calc-ref-panel">
+          <form id="refCalForm" onsubmit="return false;">
+
+            <!-- Common Row 1: Age -->
+            <div class="calc-ref-row">
+              <div class="calc-ref-label">Age</div>
+              <div class="calc-ref-field-cell">
+                <input type="text" id="refInAge" value="25" class="calc-ref-in-age">
+                <span class="calc-ref-hint">ages: 2 - 120</span>
+              </div>
+            </div>
+
+            <!-- Common Row 2: Gender -->
+            <div class="calc-ref-row">
+              <div class="calc-ref-label">Gender</div>
+              <div class="calc-ref-field-cell">
+                <div class="calc-ref-radio-group">
+                  <label class="calc-ref-radio-label">
+                    <input type="radio" name="refGender" id="refGenderMale" value="m" checked>
+                    <span class="calc-ref-radio-circle"></span>
+                    <span>Male</span>
+                  </label>
+                  <label class="calc-ref-radio-label">
+                    <input type="radio" name="refGender" id="refGenderFemale" value="f">
+                    <span class="calc-ref-radio-circle"></span>
+                    <span>Female</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 1: US UNITS HEIGHT & WEIGHT -->
+            <div id="refPanelUs">
+              <div class="calc-ref-row">
+                <div class="calc-ref-label">Height</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refHeightFt" value="5">
+                    <span class="calc-ref-unit-tag">feet</span>
+                  </div>
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refHeightIn" value="10">
+                    <span class="calc-ref-unit-tag">inches</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-ref-row">
+                <div class="calc-ref-label">Weight</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-full">
+                    <input type="text" id="refWeightLbs" value="160">
+                    <span class="calc-ref-unit-tag">pounds</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 2: METRIC UNITS HEIGHT & WEIGHT (Hidden initially) -->
+            <div id="refPanelMetric" style="display: none;">
+              <div class="calc-ref-row">
+                <div class="calc-ref-label">Height</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-full">
+                    <input type="text" id="refHeightCm" value="178">
+                    <span class="calc-ref-unit-tag">cm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="calc-ref-row">
+                <div class="calc-ref-label">Weight</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-full">
+                    <input type="text" id="refWeightKg" value="72.6">
+                    <span class="calc-ref-unit-tag">kg</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: OTHER UNITS HEIGHT & WEIGHT (Hidden initially) -->
+            <div id="refPanelOther" style="display: none;">
+              <div class="calc-ref-row">
+                <div class="calc-ref-label">Height</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refOtherHeight" value="1.78">
+                  </div>
+                  <select id="refOtherHeightUnit" class="calc-ref-select" style="width: 104px;">
+                    <option value="m" selected>meters</option>
+                    <option value="cm">cm</option>
+                    <option value="in">inches</option>
+                  </select>
+                </div>
+              </div>
+              <div class="calc-ref-row" id="refOtherSimpleWeightRow">
+                <div class="calc-ref-label">Weight</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refOtherWeight" value="72.6">
+                  </div>
+                  <select id="refOtherWeightUnit" class="calc-ref-select" style="width: 104px;">
+                    <option value="kg" selected>kg</option>
+                    <option value="lbs">pounds</option>
+                    <option value="st">stones</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Stones + Pounds alternative row -->
+              <div class="calc-ref-row" id="refOtherStonesRow" style="display: none;">
+                <div class="calc-ref-label">Weight</div>
+                <div class="calc-ref-field-cell">
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refOtherWeightSt" value="11">
+                    <span class="calc-ref-unit-tag">stones</span>
+                  </div>
+                  <div class="calc-ref-unit-box box-half">
+                    <input type="text" id="refOtherWeightLbs2" value="6">
+                    <span class="calc-ref-unit-tag">pounds</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons: Calculate & Clear -->
+            <div class="calc-ref-actions">
+              <button type="button" class="calc-ref-btn-calc" id="refBtnCalculate">
+                <span>Calculate</span>
+                <span class="calc-ref-play-icon">
+                  <svg viewBox="0 0 20 20">
+                    <polygon points="7,5 15,10 7,15" />
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="calc-ref-btn-clear" id="refBtnClear">Clear</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Result Box & Semicircular Speedometer Gauge -->
+      <div class="calc-ref-right">
+        
+        <!-- Green Result Bar with Floppy Save Icon -->
+        <div class="calc-ref-result-bar">
+          <h2 class="calc-ref-result-title">Result</h2>
+          <div class="calc-ref-save-action" id="refBtnSave" title="Save this calculation">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+            </svg>
+            <span>save</span>
+          </div>
+        </div>
+
+        <!-- Result Headline Text -->
+        <div class="calc-ref-result-headline">
+          <b>BMI = <span id="refResScore">23</span> kg/m<sup>2</sup></b> &nbsp; (<span class="calc-ref-category-val" id="refResCategory">Normal</span>)
+        </div>
+
+        <!-- SVG Speedometer Gauge (Exact match to reference image) -->
+        <div class="calc-ref-gauge-wrap">
+          <svg class="calc-ref-gauge-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 163">
+            <g transform="translate(18,18)" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+              <defs>
+                <marker id="refArrowhead" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                  <polygon points="0 0, 9 3.5, 0 7" fill="#555555" />
+                </marker>
+                <path id="curveUnderweight" d="M-4 140 A140 140, 0, 0, 1, 284 140" style="fill: none;" />
+                <path id="curveNormal" d="M33 43.6 A140 140, 0, 0, 1, 280 140" style="fill: none;" />
+                <path id="curveOverweight" d="M95 3 A140 140, 0, 0, 1, 284 140" style="fill: none;" />
+                <path id="curveObesity" d="M235.4 33 A140 140, 0, 0, 1, 284 140" style="fill: none;" />
+              </defs>
+
+              <!-- Gauge Colored Bands (Radius = 140 from 140, 140) -->
+              <!-- Band 1: Severe Thinness (< 16) -->
+              <path d="M0 140 A140 140, 0, 0, 1, 6.9 96.7 L140 140 Z" fill="#bc2020" />
+              <!-- Band 2: Moderate Thinness (16 - 17) -->
+              <path d="M6.9 96.7 A140 140, 0, 0, 1, 12.1 83.1 L140 140 Z" fill="#d38888" />
+              <!-- Band 3: Mild Thinness (17 - 18.5) -->
+              <path d="M12.1 83.1 A140 140, 0, 0, 1, 22.6 63.8 L140 140 Z" fill="#ffe400" />
+              <!-- Band 4: Normal (18.5 - 25) -->
+              <path d="M22.6 63.8 A140 140, 0, 0, 1, 96.7 6.9 L140 140 Z" fill="#008137" />
+              <!-- Band 5: Overweight (25 - 30) -->
+              <path d="M96.7 6.9 A140 140, 0, 0, 1, 169.1 3.1 L140 140 Z" fill="#ffe400" />
+              <!-- Band 6: Obese Class I (30 - 35) -->
+              <path d="M169.1 3.1 A140 140, 0, 0, 1, 233.7 36 L140 140 Z" fill="#d38888" />
+              <!-- Band 7: Obese Class II (35 - 40) -->
+              <path d="M233.7 36 A140 140, 0, 0, 1, 273.1 96.7 L140 140 Z" fill="#bc2020" />
+              <!-- Band 8: Obese Class III (> 40) -->
+              <path d="M273.1 96.7 A140 140, 0, 0, 1, 280 140 L140 140 Z" fill="#8a0101" />
+
+              <!-- Inner White Semi-circle Cutout -->
+              <path d="M45 140 A95 95, 0, 0, 1, 235 140 Z" fill="#ffffff" />
+
+              <!-- Scale Tick Numbers with White Stroke -->
+              <g style="paint-order: stroke; stroke: #ffffff; stroke-width: 2px; font-weight: normal; fill: #000000; font-size: 11.5px;">
+                <text x="25" y="111" transform="rotate(-72, 25, 111)">16</text>
+                <text x="30" y="96" transform="rotate(-66, 30, 96)">17</text>
+                <text x="35" y="83" transform="rotate(-57, 35, 83)">18.5</text>
+                <text x="97" y="29" transform="rotate(-18, 97, 29)">25</text>
+                <text x="157" y="20" transform="rotate(12, 157, 20)">30</text>
+                <text x="214" y="45" transform="rotate(42, 214, 45)">35</text>
+                <text x="252" y="95" transform="rotate(72, 252, 95)">40</text>
+              </g>
+
+              <!-- Category Labels along Curved Arcs -->
+              <g style="font-size: 14px; fill: #000000;">
+                <text><textPath xlink:href="#curveUnderweight">Underweight</textPath></text>
+                <text><textPath xlink:href="#curveNormal">Normal</textPath></text>
+                <text><textPath xlink:href="#curveOverweight">Overweight</textPath></text>
+                <text><textPath xlink:href="#curveObesity">Obesity</textPath></text>
+              </g>
+
+              <!-- Pointer Needle Line (Initialized to 60deg = BMI 23 Normal) -->
+              <line id="refGaugeNeedle" x1="140" y1="140" x2="25" y2="140" stroke="#555555" stroke-width="2.5" marker-end="url(#refArrowhead)" transform="rotate(60 140 140)" />
+
+              <!-- Center Pivot Dot on top of needle base -->
+              <circle cx="140" cy="140" r="5.5" fill="#555555" />
+
+              <!-- Center Big BMI Readout -->
+              <text id="refGaugeCenterText" x="67" y="120" style="font-size: 30px; font-weight: bold; fill: #000000; font-family: Arial, Helvetica, sans-serif;">BMI = 23</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Additional Healthy Range Details -->
+        <ul class="calc-ref-details">
+          <li>Normal BMI range: <b id="refDetHealthyRange">18.5 - 25 kg/m²</b></li>
+          <li>Normal BMI weight: <b id="refDetHealthyWeight">128.9 - 174.2 lbs</b></li>
+          <li>Ponderal Index: <b id="refDetPonderalIndex">12.9 kg/m³</b></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="calc-ref-toast" id="refToast">Saved!</div>
+
+  <script src="js/reference-bmi.js"></script>
+</body>
+</html>
